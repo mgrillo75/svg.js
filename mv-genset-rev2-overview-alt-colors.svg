@@ -12,7 +12,68 @@
 
 html, :host {
   line-height: 1.5;
-  font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-family: ui-sans-serif, system-ui, sans-serif;
+}
+
+/* ===== ANIMATIONS — THE HORROR ===== */
+@keyframes rainbowBorder {
+  0%   { border-color: #E69F00; }
+  14%  { border-color: #56B4E9; }
+  28%  { border-color: #2B9F78; }
+  42%  { border-color: #F0E442; }
+  57%  { border-color: #0072B2; }
+  71%  { border-color: #D55E00; }
+  85%  { border-color: #CC79A7; }
+  100% { border-color: #E69F00; }
+}
+
+@keyframes textCycle {
+  0%   { color: #F0E442; }
+  14%  { color: #E69F00; }
+  28%  { color: #D55E00; }
+  42%  { color: #CC79A7; }
+  57%  { color: #56B4E9; }
+  71%  { color: #0072B2; }
+  85%  { color: #2B9F78; }
+  100% { color: #F0E442; }
+}
+
+@keyframes glowPulse {
+  0%, 100% { text-shadow: 0 0 5px currentColor, 0 0 10px currentColor; }
+  50%      { text-shadow: 0 0 20px currentColor, 0 0 40px currentColor, 0 0 60px currentColor; }
+}
+
+@keyframes borderGlow {
+  0%, 100% { box-shadow: 0 0 5px rgba(240,228,66,0.3), inset 0 0 5px rgba(213,94,0,0.1); }
+  25%      { box-shadow: 0 0 15px rgba(86,180,233,0.5), inset 0 0 10px rgba(0,114,178,0.2); }
+  50%      { box-shadow: 0 0 20px rgba(204,121,167,0.6), inset 0 0 15px rgba(43,159,120,0.3); }
+  75%      { box-shadow: 0 0 15px rgba(230,159,0,0.5), inset 0 0 10px rgba(213,94,0,0.2); }
+}
+
+@keyframes iconSpin {
+  0%   { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes bgShimmer {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes statusStrobe {
+  0%, 90%, 100% { opacity: 1; }
+  95%           { opacity: 0.3; }
+}
+
+@keyframes barPulse {
+  0%, 100% { filter: brightness(1); }
+  50%      { filter: brightness(1.8); }
+}
+
+@keyframes wobble {
+  0%, 100% { transform: rotate(-1deg); }
+  50%      { transform: rotate(1deg); }
 }
 
 body {
@@ -20,9 +81,12 @@ body {
   background-color: #000000;
   color: #F0E442;
   font-family: system-ui, -apple-system, sans-serif;
-  background-image: none;
   min-height: 100vh;
   padding: 1.5rem;
+  background-image:
+    radial-gradient(circle at 10% 20%, rgba(213,94,0,0.08) 0%, transparent 50%),
+    radial-gradient(circle at 90% 80%, rgba(0,114,178,0.08) 0%, transparent 50%),
+    radial-gradient(circle at 50% 50%, rgba(204,121,167,0.05) 0%, transparent 60%);
 }
 
 /* ===== Tab System ===== */
@@ -34,6 +98,7 @@ body {
   border-radius: 0.5rem 0.5rem 0 0;
   padding: 0.25rem 0.25rem 0;
   overflow-x: auto;
+  animation: rainbowBorder 3s linear infinite;
 }
 
 .tab-btn {
@@ -55,13 +120,14 @@ body {
 .tab-btn:hover {
   color: #F0E442;
   background-color: rgba(240, 228, 66, 0.1);
+  text-shadow: 0 0 10px #F0E442;
 }
 
 .tab-btn.active {
   color: #F0E442;
   border-bottom-color: #F0E442;
-  background-color: rgba(240, 228, 66, 0.15);
-  text-shadow: 0 0 10px rgba(240, 228, 66, 0.8);
+  background: linear-gradient(180deg, rgba(213,94,0,0.2) 0%, rgba(240,228,66,0.1) 50%, transparent 100%);
+  animation: glowPulse 1.5s ease-in-out infinite;
 }
 
 .tab-content-area {
@@ -71,6 +137,8 @@ body {
   border-radius: 0 0 0.5rem 0.5rem;
   padding: 1.25rem;
   min-height: 70vh;
+  animation: rainbowBorder 3s linear infinite;
+  animation-delay: -1.5s;
 }
 
 .tab-panel { display: none; }
@@ -91,13 +159,18 @@ body {
 }
 
 .asset-title h1 {
-  font-size: 1.5rem;
+  font-size: 1.75rem;
   font-weight: 900;
-  color: #E69F00;
   margin: 0;
   text-transform: uppercase;
-  text-shadow: 0 0 15px rgba(230, 159, 0, 0.6);
-  letter-spacing: 0.1em;
+  letter-spacing: 0.15em;
+  animation: textCycle 4s linear infinite, glowPulse 2s ease-in-out infinite;
+  background: linear-gradient(90deg, #E69F00, #F0E442, #D55E00, #CC79A7, #56B4E9, #0072B2, #2B9F78, #E69F00);
+  background-size: 400% 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: bgShimmer 6s ease infinite;
+  filter: drop-shadow(0 0 8px rgba(240,228,66,0.5));
 }
 
 .status-badge {
@@ -112,15 +185,16 @@ body {
   align-items: center;
   gap: 0.5rem;
   text-transform: uppercase;
-  text-shadow: 0 0 8px rgba(43, 159, 120, 0.6);
+  animation: rainbowBorder 2s linear infinite, glowPulse 1s ease-in-out infinite, wobble 0.5s ease-in-out infinite;
 }
 
 .status-dot {
-  width: 0.625rem;
-  height: 0.625rem;
+  width: 0.75rem;
+  height: 0.75rem;
   border-radius: 50%;
   background-color: #2B9F78;
-  box-shadow: 0 0 8px #2B9F78, 0 0 16px #2B9F78;
+  box-shadow: 0 0 8px #2B9F78, 0 0 16px #2B9F78, 0 0 32px #2B9F78;
+  animation: statusStrobe 1s linear infinite;
 }
 
 /* ===== Metric Cards ===== */
@@ -133,11 +207,12 @@ body {
   align-items: center;
   gap: 1rem;
   transition: all 0.2s;
+  animation: borderGlow 4s ease-in-out infinite, rainbowBorder 5s linear infinite;
 }
 
 .metric-card:hover {
-  border-color: #56B4E9;
-  box-shadow: 0 0 12px rgba(86, 180, 233, 0.3);
+  transform: scale(1.05);
+  box-shadow: 0 0 30px rgba(240,228,66,0.4), 0 0 60px rgba(213,94,0,0.2);
 }
 
 .icon-box {
@@ -148,6 +223,10 @@ body {
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
+}
+
+.icon-box i, .icon-box span {
+  animation: iconSpin 8s linear infinite;
 }
 
 .metric-content {
@@ -167,6 +246,7 @@ body {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.03em;
+  animation: textCycle 6s linear infinite;
 }
 
 .metric-value {
@@ -177,13 +257,15 @@ body {
   align-items: baseline;
   gap: 0.25rem;
   line-height: 1.2;
-  text-shadow: 0 0 6px rgba(240, 228, 66, 0.4);
+  animation: glowPulse 2s ease-in-out infinite;
 }
 
 .metric-unit {
   font-size: 0.75rem;
   color: #E69F00;
   font-weight: 700;
+  animation: textCycle 3s linear infinite;
+  animation-direction: reverse;
 }
 
 /* ===== Grid Layouts ===== */
@@ -191,17 +273,27 @@ body {
 .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.75rem; }
 .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.75rem; }
 
+/* stagger the card animations */
+.grid-4 > :nth-child(1) { animation-delay: 0s; }
+.grid-4 > :nth-child(2) { animation-delay: -0.6s; }
+.grid-4 > :nth-child(3) { animation-delay: -1.2s; }
+.grid-4 > :nth-child(4) { animation-delay: -1.8s; }
+.grid-4 > :nth-child(5) { animation-delay: -2.4s; }
+.grid-4 > :nth-child(6) { animation-delay: -3.0s; }
+.grid-3 > :nth-child(1) { animation-delay: 0s; }
+.grid-3 > :nth-child(2) { animation-delay: -1.0s; }
+.grid-3 > :nth-child(3) { animation-delay: -2.0s; }
+
 /* ===== Section Headers ===== */
 .section-title {
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   font-weight: 900;
-  color: #D55E00;
   text-transform: uppercase;
-  letter-spacing: 0.15em;
+  letter-spacing: 0.2em;
   margin: 1.25rem 0 0.625rem 0;
-  text-shadow: 0 0 8px rgba(213, 94, 0, 0.5);
-  border-bottom: 1px solid #D55E00;
-  padding-bottom: 0.25rem;
+  padding-bottom: 0.35rem;
+  border-bottom: 2px dashed;
+  animation: textCycle 3s linear infinite, glowPulse 1.5s ease-in-out infinite;
 }
 
 .section-title:first-child {
@@ -217,7 +309,13 @@ body {
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
+  animation: rainbowBorder 4s linear infinite, borderGlow 3s ease-in-out infinite;
 }
+
+.setpoint-card:nth-child(1) { animation-delay: 0s; }
+.setpoint-card:nth-child(2) { animation-delay: -1s; }
+.setpoint-card:nth-child(3) { animation-delay: -2s; }
+.setpoint-card:nth-child(4) { animation-delay: -3s; }
 
 /* ===== Buttons ===== */
 .btn-control {
@@ -232,26 +330,31 @@ body {
   cursor: pointer;
   font-family: inherit;
   text-transform: uppercase;
+  animation: rainbowBorder 6s linear infinite;
 }
 
 .btn-control:hover {
-  background-color: rgba(86, 180, 233, 0.15);
+  background-color: rgba(240, 228, 66, 0.2);
   color: #F0E442;
   border-color: #F0E442;
+  box-shadow: 0 0 20px rgba(240, 228, 66, 0.5);
+  transform: scale(1.1);
 }
 
 .btn-primary {
-  background-color: #D55E00;
+  background: linear-gradient(135deg, #D55E00, #E69F00, #F0E442);
+  background-size: 300% 300%;
   color: #000000;
-  border: 2px solid #E69F00;
-  box-shadow: 0 0 15px rgba(213, 94, 0, 0.4);
-  text-shadow: none;
+  border: 2px solid #F0E442;
+  box-shadow: 0 0 15px rgba(213, 94, 0, 0.4), 0 0 30px rgba(240, 228, 66, 0.2);
+  animation: bgShimmer 2s ease infinite, borderGlow 2s ease-in-out infinite;
 }
 
 .btn-primary:hover {
-  background-color: #E69F00;
+  background: linear-gradient(135deg, #F0E442, #E69F00, #D55E00);
   color: #000000;
-  box-shadow: 0 0 25px rgba(230, 159, 0, 0.6);
+  box-shadow: 0 0 40px rgba(240, 228, 66, 0.8);
+  transform: scale(1.15);
 }
 
 /* ===== Command Bar ===== */
@@ -278,6 +381,7 @@ body {
   font-size: 0.875rem;
   color: #CC79A7;
   font-weight: 700;
+  animation: rainbowBorder 3s linear infinite;
 }
 
 .priority-selector select {
@@ -310,12 +414,13 @@ body {
   gap: 0.75rem;
 }
 
-/* ===== Placeholder for future tabs ===== */
+/* ===== Placeholder ===== */
 .placeholder-msg {
   color: #CC79A7;
   font-size: 0.875rem;
   padding: 2rem;
   text-align: center;
+  animation: textCycle 3s linear infinite;
 }
 
         </style>
@@ -358,17 +463,17 @@ body {
             <button class="btn-control btn-primary" style="padding: 0.5rem 1.25rem;">
               <i class="fa-solid fa-play" style="margin-right: 0.375rem;"></i> Start
             </button>
-            <button class="btn-control" style="padding: 0.5rem 1.25rem;">
+            <button class="btn-control" style="padding: 0.5rem 1.25rem; animation-delay: -0.5s;">
               <i class="fa-solid fa-stop" style="margin-right: 0.375rem;"></i> Stop
             </button>
-            <button class="btn-control" style="padding: 0.5rem 1.25rem; border-color:#E69F00; color:#E69F00;">
+            <button class="btn-control" style="padding: 0.5rem 1.25rem; border-color:#E69F00; color:#E69F00; animation-delay: -1s;">
               <i class="fa-solid fa-bell" style="margin-right: 0.375rem;"></i> Alarm Ack
             </button>
-            <div style="width: 2px; height: 1.75rem; background-color: #D55E00; margin: 0 0.25rem;"></div>
-            <button class="btn-control" style="padding: 0.5rem 1.25rem; border-color:#CC79A7; color:#CC79A7;">Block</button>
-            <button class="btn-control btn-primary" style="padding: 0.5rem 1.25rem;">Auto</button>
-            <button class="btn-control" style="padding: 0.5rem 1.25rem; border-color:#CC79A7; color:#CC79A7;">Manual</button>
-            <div style="width: 2px; height: 1.75rem; background-color: #D55E00; margin: 0 0.25rem;"></div>
+            <div style="width: 3px; height: 1.75rem; margin: 0 0.25rem; background: linear-gradient(180deg, #D55E00, #F0E442, #D55E00); animation: barPulse 1s ease-in-out infinite;"></div>
+            <button class="btn-control" style="padding: 0.5rem 1.25rem; border-color:#CC79A7; color:#CC79A7; animation-delay: -1.5s;">Block</button>
+            <button class="btn-control btn-primary" style="padding: 0.5rem 1.25rem; animation-delay: -0.3s;">Auto</button>
+            <button class="btn-control" style="padding: 0.5rem 1.25rem; border-color:#CC79A7; color:#CC79A7; animation-delay: -2s;">Manual</button>
+            <div style="width: 3px; height: 1.75rem; margin: 0 0.25rem; background: linear-gradient(180deg, #56B4E9, #0072B2, #56B4E9); animation: barPulse 1s ease-in-out infinite; animation-delay: -0.5s;"></div>
             <div class="priority-selector">
               <span>Priority</span>
               <select>
@@ -386,8 +491,8 @@ body {
           <div class="grid-4">
             <!-- Real Power -->
             <div class="metric-card">
-              <div class="icon-box" style="background-color: rgba(240,228,66,0.2); color: #F0E442;">
-                <i class="fa-solid fa-bolt" style="font-size:1.25rem; filter: drop-shadow(0 0 4px #F0E442);"></i>
+              <div class="icon-box" style="background-color: rgba(240,228,66,0.25); color: #F0E442;">
+                <i class="fa-solid fa-bolt" style="font-size:1.25rem; filter: drop-shadow(0 0 8px #F0E442);"></i>
               </div>
               <div class="metric-content">
                 <div class="metric-label">Real Power</div>
@@ -396,8 +501,8 @@ body {
             </div>
             <!-- Reactive Power -->
             <div class="metric-card">
-              <div class="icon-box" style="background-color: rgba(86,180,233,0.2); color: #56B4E9;">
-                <i class="fa-solid fa-bolt" style="font-size:1.25rem; filter: drop-shadow(0 0 4px #56B4E9);"></i>
+              <div class="icon-box" style="background-color: rgba(86,180,233,0.25); color: #56B4E9;">
+                <i class="fa-solid fa-bolt" style="font-size:1.25rem; filter: drop-shadow(0 0 8px #56B4E9);"></i>
               </div>
               <div class="metric-content">
                 <div class="metric-label">Reactive Power</div>
@@ -406,8 +511,8 @@ body {
             </div>
             <!-- Apparent Power -->
             <div class="metric-card">
-              <div class="icon-box" style="background-color: rgba(204,121,167,0.2); color: #CC79A7;">
-                <i class="fa-solid fa-bolt" style="font-size:1.25rem; filter: drop-shadow(0 0 4px #CC79A7);"></i>
+              <div class="icon-box" style="background-color: rgba(204,121,167,0.25); color: #CC79A7;">
+                <i class="fa-solid fa-bolt" style="font-size:1.25rem; filter: drop-shadow(0 0 8px #CC79A7);"></i>
               </div>
               <div class="metric-content">
                 <div class="metric-label">Apparent Power</div>
@@ -416,8 +521,8 @@ body {
             </div>
             <!-- Power Factor -->
             <div class="metric-card">
-              <div class="icon-box" style="background-color: rgba(43,159,120,0.2); color: #2B9F78;">
-                <i class="fa-solid fa-wave-square" style="font-size:1.25rem; filter: drop-shadow(0 0 4px #2B9F78);"></i>
+              <div class="icon-box" style="background-color: rgba(43,159,120,0.25); color: #2B9F78;">
+                <i class="fa-solid fa-wave-square" style="font-size:1.25rem; filter: drop-shadow(0 0 8px #2B9F78);"></i>
               </div>
               <div class="metric-content">
                 <div class="metric-label">Power Factor</div>
@@ -426,8 +531,8 @@ body {
             </div>
             <!-- Frequency -->
             <div class="metric-card">
-              <div class="icon-box" style="background-color: rgba(0,114,178,0.2); color: #0072B2;">
-                <i class="fa-solid fa-wave-square" style="font-size:1.25rem; filter: drop-shadow(0 0 4px #0072B2);"></i>
+              <div class="icon-box" style="background-color: rgba(0,114,178,0.25); color: #0072B2;">
+                <i class="fa-solid fa-wave-square" style="font-size:1.25rem; filter: drop-shadow(0 0 8px #0072B2);"></i>
               </div>
               <div class="metric-content">
                 <div class="metric-label">Frequency</div>
@@ -436,22 +541,22 @@ body {
             </div>
             <!-- GCB Status -->
             <div class="metric-card" style="border-color: #2B9F78;">
-              <div class="icon-box" style="background-color: rgba(43,159,120,0.25); color: #2B9F78;">
-                <i class="fa-solid fa-toggle-on" style="font-size:1.25rem; filter: drop-shadow(0 0 6px #2B9F78);"></i>
+              <div class="icon-box" style="background-color: rgba(43,159,120,0.3); color: #2B9F78;">
+                <i class="fa-solid fa-toggle-on" style="font-size:1.25rem; filter: drop-shadow(0 0 10px #2B9F78);"></i>
               </div>
               <div class="metric-content">
                 <div class="metric-label">GCB Status</div>
-                <div class="metric-value" style="color: #2B9F78; text-shadow: 0 0 8px rgba(43,159,120,0.6);">Closed</div>
+                <div class="metric-value" style="color: #2B9F78;">Closed</div>
               </div>
             </div>
           </div>
 
           <!-- Phase Voltages -->
-          <div class="section-title">Phase Voltages</div>
+          <div class="section-title" style="animation-delay: -1s;">Phase Voltages</div>
           <div class="grid-3">
             <div class="metric-card" style="border-color: #E69F00;">
-              <div class="icon-box" style="background-color: rgba(230,159,0,0.25); color: #E69F00;">
-                <span style="font-weight:900; font-size:1rem; text-shadow: 0 0 6px #E69F00;">L1</span>
+              <div class="icon-box" style="background-color: rgba(230,159,0,0.3); color: #E69F00;">
+                <span style="font-weight:900; font-size:1rem;">L1</span>
               </div>
               <div class="metric-content">
                 <div class="metric-label" style="color: #E69F00;">Voltage L1-N</div>
@@ -459,8 +564,8 @@ body {
               </div>
             </div>
             <div class="metric-card" style="border-color: #E69F00;">
-              <div class="icon-box" style="background-color: rgba(230,159,0,0.25); color: #E69F00;">
-                <span style="font-weight:900; font-size:1rem; text-shadow: 0 0 6px #E69F00;">L2</span>
+              <div class="icon-box" style="background-color: rgba(230,159,0,0.3); color: #E69F00;">
+                <span style="font-weight:900; font-size:1rem;">L2</span>
               </div>
               <div class="metric-content">
                 <div class="metric-label" style="color: #E69F00;">Voltage L2-N</div>
@@ -468,8 +573,8 @@ body {
               </div>
             </div>
             <div class="metric-card" style="border-color: #E69F00;">
-              <div class="icon-box" style="background-color: rgba(230,159,0,0.25); color: #E69F00;">
-                <span style="font-weight:900; font-size:1rem; text-shadow: 0 0 6px #E69F00;">L3</span>
+              <div class="icon-box" style="background-color: rgba(230,159,0,0.3); color: #E69F00;">
+                <span style="font-weight:900; font-size:1rem;">L3</span>
               </div>
               <div class="metric-content">
                 <div class="metric-label" style="color: #E69F00;">Voltage L3-N</div>
@@ -479,11 +584,11 @@ body {
           </div>
 
           <!-- Phase Currents -->
-          <div class="section-title">Phase Currents</div>
+          <div class="section-title" style="animation-delay: -2s;">Phase Currents</div>
           <div class="grid-3">
             <div class="metric-card" style="border-color: #D55E00;">
-              <div class="icon-box" style="background-color: rgba(213,94,0,0.25); color: #D55E00;">
-                <span style="font-weight:900; font-size:1rem; text-shadow: 0 0 6px #D55E00;">L1</span>
+              <div class="icon-box" style="background-color: rgba(213,94,0,0.3); color: #D55E00;">
+                <span style="font-weight:900; font-size:1rem;">L1</span>
               </div>
               <div class="metric-content">
                 <div class="metric-label" style="color: #D55E00;">Current L1</div>
@@ -491,8 +596,8 @@ body {
               </div>
             </div>
             <div class="metric-card" style="border-color: #D55E00;">
-              <div class="icon-box" style="background-color: rgba(213,94,0,0.25); color: #D55E00;">
-                <span style="font-weight:900; font-size:1rem; text-shadow: 0 0 6px #D55E00;">L2</span>
+              <div class="icon-box" style="background-color: rgba(213,94,0,0.3); color: #D55E00;">
+                <span style="font-weight:900; font-size:1rem;">L2</span>
               </div>
               <div class="metric-content">
                 <div class="metric-label" style="color: #D55E00;">Current L2</div>
@@ -500,8 +605,8 @@ body {
               </div>
             </div>
             <div class="metric-card" style="border-color: #D55E00;">
-              <div class="icon-box" style="background-color: rgba(213,94,0,0.25); color: #D55E00;">
-                <span style="font-weight:900; font-size:1rem; text-shadow: 0 0 6px #D55E00;">L3</span>
+              <div class="icon-box" style="background-color: rgba(213,94,0,0.3); color: #D55E00;">
+                <span style="font-weight:900; font-size:1rem;">L3</span>
               </div>
               <div class="metric-content">
                 <div class="metric-label" style="color: #D55E00;">Current L3</div>
@@ -518,57 +623,57 @@ body {
           <!-- Run State -->
           <div class="setpoint-card" style="border-color: #2B9F78;">
             <div class="flex" style="display:flex; align-items:center; gap:0.75rem;">
-              <div class="icon-box" style="background-color: rgba(43,159,120,0.25); color: #2B9F78; width:2.25rem; height:2.25rem;">
-                <i class="fa-solid fa-circle-play" style="filter: drop-shadow(0 0 4px #2B9F78);"></i>
+              <div class="icon-box" style="background-color: rgba(43,159,120,0.3); color: #2B9F78; width:2.25rem; height:2.25rem;">
+                <i class="fa-solid fa-circle-play" style="filter: drop-shadow(0 0 6px #2B9F78);"></i>
               </div>
-              <span style="font-size:0.8rem; color:#56B4E9; font-weight:700; text-transform:uppercase;">Run State</span>
+              <span style="font-size:0.8rem; color:#56B4E9; font-weight:700; text-transform:uppercase; animation: textCycle 5s linear infinite;">Run State</span>
             </div>
-            <div style="font-size:1.5rem; font-weight:900; color:#2B9F78; margin-top:0.25rem; text-shadow: 0 0 12px rgba(43,159,120,0.6);">RUNNING</div>
-            <div style="font-size:0.75rem; color:#E69F00; font-weight:600;">1,110 operating hours</div>
+            <div style="font-size:1.75rem; font-weight:900; color:#2B9F78; margin-top:0.25rem; animation: glowPulse 1.5s ease-in-out infinite; text-shadow: 0 0 15px rgba(43,159,120,0.8);">RUNNING</div>
+            <div style="font-size:0.75rem; color:#E69F00; font-weight:600; animation: textCycle 7s linear infinite;">1,110 operating hours</div>
           </div>
 
           <!-- Operating Mode -->
           <div class="setpoint-card" style="border-color: #0072B2;">
             <div style="display:flex; align-items:center; gap:0.75rem;">
-              <div class="icon-box" style="background-color: rgba(0,114,178,0.25); color: #0072B2; width:2.25rem; height:2.25rem;">
-                <i class="fa-solid fa-sliders" style="filter: drop-shadow(0 0 4px #0072B2);"></i>
+              <div class="icon-box" style="background-color: rgba(0,114,178,0.3); color: #0072B2; width:2.25rem; height:2.25rem;">
+                <i class="fa-solid fa-sliders" style="filter: drop-shadow(0 0 6px #0072B2);"></i>
               </div>
-              <span style="font-size:0.8rem; color:#56B4E9; font-weight:700; text-transform:uppercase;">Operating Mode</span>
+              <span style="font-size:0.8rem; color:#56B4E9; font-weight:700; text-transform:uppercase; animation: textCycle 5s linear infinite; animation-delay: -1s;">Operating Mode</span>
             </div>
-            <div style="font-size:1.5rem; font-weight:900; color:#56B4E9; margin-top:0.25rem; text-shadow: 0 0 12px rgba(86,180,233,0.5);">AUTOMATIC</div>
-            <div style="font-size:0.75rem; color:#CC79A7; font-weight:600;">Priority 4 of 5</div>
+            <div style="font-size:1.75rem; font-weight:900; color:#56B4E9; margin-top:0.25rem; animation: glowPulse 1.5s ease-in-out infinite; animation-delay: -0.5s; text-shadow: 0 0 15px rgba(86,180,233,0.6);">AUTOMATIC</div>
+            <div style="font-size:0.75rem; color:#CC79A7; font-weight:600; animation: textCycle 7s linear infinite; animation-delay: -2s;">Priority 4 of 5</div>
           </div>
 
           <!-- Operator Panel State -->
           <div class="setpoint-card" style="border-color: #E69F00;">
             <div style="display:flex; align-items:center; gap:0.75rem;">
-              <div class="icon-box" style="background-color: rgba(230,159,0,0.2); color: #E69F00; width:2.25rem; height:2.25rem;">
-                <i class="fa-solid fa-gamepad" style="filter: drop-shadow(0 0 4px #E69F00);"></i>
+              <div class="icon-box" style="background-color: rgba(230,159,0,0.25); color: #E69F00; width:2.25rem; height:2.25rem;">
+                <i class="fa-solid fa-gamepad" style="filter: drop-shadow(0 0 6px #E69F00);"></i>
               </div>
-              <span style="font-size:0.8rem; color:#56B4E9; font-weight:700; text-transform:uppercase;">Local Operator Panel</span>
+              <span style="font-size:0.8rem; color:#56B4E9; font-weight:700; text-transform:uppercase; animation: textCycle 5s linear infinite; animation-delay: -2s;">Local Operator Panel</span>
             </div>
             <div style="display:flex; gap:0.5rem; margin-top:0.375rem; flex-wrap:wrap;">
-              <span style="font-size:0.75rem; padding:0.2rem 0.5rem; background-color:rgba(0,114,178,0.3); color:#56B4E9; border-radius:0.25rem; font-weight:800; border:1px solid #0072B2;">Op: Off</span>
-              <span style="font-size:0.75rem; padding:0.2rem 0.5rem; background-color:rgba(204,121,167,0.3); color:#CC79A7; border-radius:0.25rem; font-weight:800; border:1px solid #CC79A7;">Req: Off</span>
-              <span style="font-size:0.75rem; padding:0.2rem 0.5rem; background-color:rgba(43,159,120,0.3); color:#2B9F78; border-radius:0.25rem; font-weight:800; border:1px solid #2B9F78;">Synch: Off</span>
+              <span style="font-size:0.75rem; padding:0.2rem 0.5rem; background-color:rgba(0,114,178,0.3); color:#56B4E9; border-radius:0.25rem; font-weight:800; border:2px solid #0072B2; animation: rainbowBorder 2s linear infinite;">Op: Off</span>
+              <span style="font-size:0.75rem; padding:0.2rem 0.5rem; background-color:rgba(204,121,167,0.3); color:#CC79A7; border-radius:0.25rem; font-weight:800; border:2px solid #CC79A7; animation: rainbowBorder 2s linear infinite; animation-delay: -0.7s;">Req: Off</span>
+              <span style="font-size:0.75rem; padding:0.2rem 0.5rem; background-color:rgba(43,159,120,0.3); color:#2B9F78; border-radius:0.25rem; font-weight:800; border:2px solid #2B9F78; animation: rainbowBorder 2s linear infinite; animation-delay: -1.4s;">Synch: Off</span>
             </div>
           </div>
 
           <!-- Power Summary -->
           <div class="setpoint-card" style="border-color: #F0E442;">
             <div style="display:flex; align-items:center; gap:0.75rem;">
-              <div class="icon-box" style="background-color: rgba(240,228,66,0.2); color: #F0E442; width:2.25rem; height:2.25rem;">
-                <i class="fa-solid fa-gauge-high" style="filter: drop-shadow(0 0 4px #F0E442);"></i>
+              <div class="icon-box" style="background-color: rgba(240,228,66,0.25); color: #F0E442; width:2.25rem; height:2.25rem;">
+                <i class="fa-solid fa-gauge-high" style="filter: drop-shadow(0 0 6px #F0E442);"></i>
               </div>
-              <span style="font-size:0.8rem; color:#56B4E9; font-weight:700; text-transform:uppercase;">Load</span>
+              <span style="font-size:0.8rem; color:#56B4E9; font-weight:700; text-transform:uppercase; animation: textCycle 5s linear infinite; animation-delay: -3s;">Load</span>
             </div>
             <div style="display:flex; justify-content:space-between; align-items:baseline; margin-top:0.25rem;">
-              <span style="font-size:1.5rem; font-weight:900; color:#F0E442; text-shadow: 0 0 8px rgba(240,228,66,0.5);">1,624 <span style="font-size:0.75rem; color:#E69F00; font-weight:700;">kW</span></span>
-              <span style="font-size:1.125rem; font-weight:900; color:#D55E00; text-shadow: 0 0 6px rgba(213,94,0,0.5);">49.1%</span>
+              <span style="font-size:1.75rem; font-weight:900; color:#F0E442; animation: glowPulse 1.5s ease-in-out infinite; animation-delay: -1s;">1,624 <span style="font-size:0.75rem; color:#E69F00; font-weight:700;">kW</span></span>
+              <span style="font-size:1.25rem; font-weight:900; color:#D55E00; animation: glowPulse 1s ease-in-out infinite; text-shadow: 0 0 10px rgba(213,94,0,0.6);">49.1%</span>
             </div>
-            <!-- Bar -->
-            <div style="height:0.5rem; background-color:rgba(213,94,0,0.2); border-radius:9999px; overflow:hidden; margin-top:0.25rem; border:1px solid #D55E00;">
-              <div style="width:49.1%; height:100%; background: linear-gradient(to right, #D55E00, #E69F00, #F0E442); border-radius:9999px; box-shadow: 0 0 8px rgba(240,228,66,0.4);"></div>
+            <!-- THE BAR OF DOOM -->
+            <div style="height:0.625rem; background-color:rgba(213,94,0,0.15); border-radius:9999px; overflow:hidden; margin-top:0.25rem; border:2px solid #D55E00; animation: rainbowBorder 2s linear infinite;">
+              <div style="width:49.1%; height:100%; background: linear-gradient(90deg, #D55E00, #E69F00, #F0E442, #2B9F78, #56B4E9); background-size: 200% 100%; border-radius:9999px; animation: bgShimmer 1.5s ease infinite, barPulse 1s ease-in-out infinite;"></div>
             </div>
           </div>
 
@@ -576,19 +681,11 @@ body {
       </div>
     </div>
 
-    <!-- ==================== TAB 2-5: Placeholders ==================== -->
-    <div id="tab-engine" class="tab-panel">
-      <div class="placeholder-msg">Engine Diagnostics</div>
-    </div>
-    <div id="tab-control" class="tab-panel">
-      <div class="placeholder-msg">Control / Modes</div>
-    </div>
-    <div id="tab-alarms" class="tab-panel">
-      <div class="placeholder-msg">Alarms / Alerts</div>
-    </div>
-    <div id="tab-tagdata" class="tab-panel">
-      <div class="placeholder-msg">Tag Data</div>
-    </div>
+    <!-- Placeholders -->
+    <div id="tab-engine" class="tab-panel"><div class="placeholder-msg">Engine Diagnostics</div></div>
+    <div id="tab-control" class="tab-panel"><div class="placeholder-msg">Control / Modes</div></div>
+    <div id="tab-alarms" class="tab-panel"><div class="placeholder-msg">Alarms / Alerts</div></div>
+    <div id="tab-tagdata" class="tab-panel"><div class="placeholder-msg">Tag Data</div></div>
 
   </div>
 
