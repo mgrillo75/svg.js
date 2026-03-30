@@ -1,0 +1,603 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" style="background-color: #000000;">
+  <foreignObject width="100%" height="100%">
+    <html xmlns="http://www.w3.org/1999/xhtml">
+      <head>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+        <style>
+*, ::before, ::after {
+  box-sizing: border-box;
+  border-width: 0;
+  border-style: solid;
+  border-color: #1a2540;
+}
+
+html, :host {
+  line-height: 1.5;
+  font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+body {
+  margin: 0;
+  background-color: #000000;
+  color: #e8ecf2;
+  font-family: system-ui, -apple-system, sans-serif;
+  background-image: radial-gradient(circle at 50% 0%, #060c1a 0%, #000000 70%);
+  background-attachment: fixed;
+  min-height: 100vh;
+  padding: 1.5rem;
+}
+
+/* ===== Tab System ===== */
+.tab-bar {
+  display: flex;
+  gap: 2px;
+  background-color: #060c1a;
+  border: 1px solid #152030;
+  border-radius: 0.5rem 0.5rem 0 0;
+  padding: 0.25rem 0.25rem 0;
+  overflow-x: auto;
+}
+
+.tab-btn {
+  padding: 0.625rem 1.25rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #708090;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.2s;
+  font-family: inherit;
+}
+
+.tab-btn:hover {
+  color: #a0b0c0;
+  background-color: rgba(20, 35, 60, 0.5);
+}
+
+.tab-btn.active {
+  color: #d4682a;
+  border-bottom-color: #d4682a;
+  background-color: rgba(212, 104, 42, 0.06);
+}
+
+.tab-content-area {
+  background-color: #060c1a;
+  border: 1px solid #152030;
+  border-top: none;
+  border-radius: 0 0 0.5rem 0.5rem;
+  padding: 1.25rem;
+  min-height: 70vh;
+}
+
+.tab-panel { display: none; }
+.tab-panel.active { display: block; }
+
+/* ===== Header ===== */
+.screen-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.asset-title {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.asset-title h1 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #e8ecf2;
+  margin: 0;
+}
+
+.status-badge {
+  padding: 0.25rem 0.75rem;
+  background-color: rgba(0, 184, 148, 0.12);
+  color: #2ec4a0;
+  font-size: 0.75rem;
+  font-weight: 700;
+  border-radius: 9999px;
+  border: 1px solid rgba(0, 184, 148, 0.25);
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+}
+
+.status-dot {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background-color: #00b894;
+}
+
+/* ===== Metric Cards ===== */
+.metric-card {
+  background-color: #080c18;
+  border: 1px solid #152030;
+  border-radius: 0.5rem;
+  padding: 0.875rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  transition: border-color 0.2s;
+}
+
+.metric-card:hover {
+  border-color: #1e3050;
+}
+
+.icon-box {
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.metric-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 0;
+}
+
+.metric-label {
+  font-size: 0.75rem;
+  color: #708090;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 0.125rem;
+}
+
+.metric-value {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #e8ecf2;
+  display: flex;
+  align-items: baseline;
+  gap: 0.25rem;
+  line-height: 1.2;
+}
+
+.metric-unit {
+  font-size: 0.75rem;
+  color: #506070;
+  font-weight: 400;
+}
+
+/* ===== Grid Layouts ===== */
+.grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.75rem; }
+.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.75rem; }
+.grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.75rem; }
+
+/* ===== Section Headers ===== */
+.section-title {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #506070;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin: 1.25rem 0 0.625rem 0;
+}
+
+.section-title:first-child {
+  margin-top: 0;
+}
+
+/* ===== Setpoint / Power Cards ===== */
+.setpoint-card {
+  background-color: #080c18;
+  border: 1px solid #152030;
+  border-radius: 0.5rem;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+/* ===== Buttons ===== */
+.btn-control {
+  background-color: #101828;
+  color: #a0b0c0;
+  border: 1px solid #1e3050;
+  padding: 0.5rem 1rem;
+  border-radius: 0.375rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: all 0.2s;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.btn-control:hover {
+  background-color: #1e3050;
+  color: white;
+}
+
+.btn-primary {
+  background-color: #d4682a;
+  color: #1a0a00;
+  border: 1px solid #b85620;
+  box-shadow: 0 0 10px rgba(212, 104, 42, 0.25);
+}
+
+.btn-primary:hover {
+  background-color: #b85620;
+  color: white;
+}
+
+/* ===== Command Bar ===== */
+.command-bar {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.command-bar .btn-control {
+  flex: none;
+}
+
+/* ===== Priority Selector ===== */
+.priority-selector {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: #101828;
+  border: 1px solid #1e3050;
+  border-radius: 0.375rem;
+  padding: 0.375rem 0.75rem;
+  font-size: 0.875rem;
+  color: #a0b0c0;
+}
+
+.priority-selector select {
+  background-color: #060c1a;
+  color: #e8ecf2;
+  border: 1px solid #1e3050;
+  border-radius: 0.25rem;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.875rem;
+  font-family: inherit;
+}
+
+/* ===== Overview Layout ===== */
+.overview-layout {
+  display: flex;
+  gap: 1.25rem;
+}
+
+.overview-main {
+  flex: 1;
+  min-width: 0;
+}
+
+.overview-sidebar {
+  width: 16rem;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+/* ===== Placeholder for future tabs ===== */
+.placeholder-msg {
+  color: #506070;
+  font-size: 0.875rem;
+  padding: 2rem;
+  text-align: center;
+}
+
+        </style>
+      </head>
+      <body>
+
+  <!-- Screen Header -->
+  <div class="screen-header">
+    <div class="asset-title">
+      <h1>MV Genset — G5</h1>
+      <div class="status-badge">
+        <div class="status-dot"></div>
+        Running
+      </div>
+    </div>
+  </div>
+
+  <!-- Tab Bar -->
+  <div class="tab-bar">
+    <button class="tab-btn active" onclick="switchTab('overview')">Overview</button>
+    <button class="tab-btn" onclick="switchTab('engine')">Engine Diagnostics</button>
+    <button class="tab-btn" onclick="switchTab('control')">Control / Modes</button>
+    <button class="tab-btn" onclick="switchTab('alarms')">Alarms / Alerts</button>
+    <button class="tab-btn" onclick="switchTab('tagdata')">Tag Data</button>
+  </div>
+
+  <!-- Tab Content Area -->
+  <div class="tab-content-area">
+
+    <!-- ==================== TAB 1: OVERVIEW ==================== -->
+    <div id="tab-overview" class="tab-panel active">
+      <div class="overview-layout">
+
+        <!-- Main Content -->
+        <div class="overview-main">
+
+          <!-- Command Bar -->
+          <div class="section-title">Commands</div>
+          <div class="command-bar" style="margin-bottom: 0.25rem;">
+            <button class="btn-control btn-primary" style="padding: 0.5rem 1.25rem;">
+              <i class="fa-solid fa-play" style="margin-right: 0.375rem;"></i> Start
+            </button>
+            <button class="btn-control" style="padding: 0.5rem 1.25rem;">
+              <i class="fa-solid fa-stop" style="margin-right: 0.375rem;"></i> Stop
+            </button>
+            <button class="btn-control" style="padding: 0.5rem 1.25rem;">
+              <i class="fa-solid fa-bell" style="margin-right: 0.375rem;"></i> Alarm Ack
+            </button>
+            <div style="width: 1px; height: 1.75rem; background-color: #1e3050; margin: 0 0.25rem;"></div>
+            <button class="btn-control" style="padding: 0.5rem 1.25rem;">Block</button>
+            <button class="btn-control btn-primary" style="padding: 0.5rem 1.25rem;">Auto</button>
+            <button class="btn-control" style="padding: 0.5rem 1.25rem;">Manual</button>
+            <div style="width: 1px; height: 1.75rem; background-color: #1e3050; margin: 0 0.25rem;"></div>
+            <div class="priority-selector">
+              <span>Priority</span>
+              <select>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option selected="">4</option>
+                <option>5</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Electrical Metrics -->
+          <div class="section-title">Electrical</div>
+          <div class="grid-4">
+            <!-- Real Power -->
+            <div class="metric-card">
+              <div class="icon-box" style="background-color: rgba(0,184,148,0.12); color: #2ec4a0;">
+                <i class="fa-solid fa-bolt" style="font-size:1.25rem;"></i>
+              </div>
+              <div class="metric-content">
+                <div class="metric-label">Real Power</div>
+                <div class="metric-value">1,624 <span class="metric-unit">kW</span></div>
+              </div>
+            </div>
+            <!-- Reactive Power -->
+            <div class="metric-card">
+              <div class="icon-box" style="background-color: rgba(74,144,217,0.12); color: #4a90d9;">
+                <i class="fa-solid fa-bolt" style="font-size:1.25rem;"></i>
+              </div>
+              <div class="metric-content">
+                <div class="metric-label">Reactive Power</div>
+                <div class="metric-value">40 <span class="metric-unit">kVAr</span></div>
+              </div>
+            </div>
+            <!-- Apparent Power -->
+            <div class="metric-card">
+              <div class="icon-box" style="background-color: rgba(160,80,220,0.12); color: #a050dc;">
+                <i class="fa-solid fa-bolt" style="font-size:1.25rem;"></i>
+              </div>
+              <div class="metric-content">
+                <div class="metric-label">Apparent Power</div>
+                <div class="metric-value">1,625 <span class="metric-unit">kVA</span></div>
+              </div>
+            </div>
+            <!-- Power Factor -->
+            <div class="metric-card">
+              <div class="icon-box" style="background-color: rgba(0,184,148,0.12); color: #2ec4a0;">
+                <i class="fa-solid fa-wave-square" style="font-size:1.25rem;"></i>
+              </div>
+              <div class="metric-content">
+                <div class="metric-label">Power Factor</div>
+                <div class="metric-value">0.999</div>
+              </div>
+            </div>
+            <!-- Frequency -->
+            <div class="metric-card">
+              <div class="icon-box" style="background-color: rgba(74,144,217,0.12); color: #4a90d9;">
+                <i class="fa-solid fa-wave-square" style="font-size:1.25rem;"></i>
+              </div>
+              <div class="metric-content">
+                <div class="metric-label">Frequency</div>
+                <div class="metric-value">50.01 <span class="metric-unit">Hz</span></div>
+              </div>
+            </div>
+            <!-- GCB Status -->
+            <div class="metric-card">
+              <div class="icon-box" style="background-color: rgba(0,184,148,0.12); color: #2ec4a0;">
+                <i class="fa-solid fa-toggle-on" style="font-size:1.25rem;"></i>
+              </div>
+              <div class="metric-content">
+                <div class="metric-label">GCB Status</div>
+                <div class="metric-value" style="color: #2ec4a0;">Closed</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Phase Voltages -->
+          <div class="section-title">Phase Voltages</div>
+          <div class="grid-3">
+            <div class="metric-card">
+              <div class="icon-box" style="background-color: rgba(212,104,42,0.12); color: #d4682a;">
+                <span style="font-weight:700; font-size:0.875rem;">L1</span>
+              </div>
+              <div class="metric-content">
+                <div class="metric-label">Voltage L1-N</div>
+                <div class="metric-value">6,351 <span class="metric-unit">V</span></div>
+              </div>
+            </div>
+            <div class="metric-card">
+              <div class="icon-box" style="background-color: rgba(212,104,42,0.12); color: #d4682a;">
+                <span style="font-weight:700; font-size:0.875rem;">L2</span>
+              </div>
+              <div class="metric-content">
+                <div class="metric-label">Voltage L2-N</div>
+                <div class="metric-value">6,348 <span class="metric-unit">V</span></div>
+              </div>
+            </div>
+            <div class="metric-card">
+              <div class="icon-box" style="background-color: rgba(212,104,42,0.12); color: #d4682a;">
+                <span style="font-weight:700; font-size:0.875rem;">L3</span>
+              </div>
+              <div class="metric-content">
+                <div class="metric-label">Voltage L3-N</div>
+                <div class="metric-value">6,355 <span class="metric-unit">V</span></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Phase Currents -->
+          <div class="section-title">Phase Currents</div>
+          <div class="grid-3">
+            <div class="metric-card">
+              <div class="icon-box" style="background-color: rgba(0,184,148,0.12); color: #00b894;">
+                <span style="font-weight:700; font-size:0.875rem;">L1</span>
+              </div>
+              <div class="metric-content">
+                <div class="metric-label">Current L1</div>
+                <div class="metric-value">85.2 <span class="metric-unit">A</span></div>
+              </div>
+            </div>
+            <div class="metric-card">
+              <div class="icon-box" style="background-color: rgba(0,184,148,0.12); color: #00b894;">
+                <span style="font-weight:700; font-size:0.875rem;">L2</span>
+              </div>
+              <div class="metric-content">
+                <div class="metric-label">Current L2</div>
+                <div class="metric-value">85.0 <span class="metric-unit">A</span></div>
+              </div>
+            </div>
+            <div class="metric-card">
+              <div class="icon-box" style="background-color: rgba(0,184,148,0.12); color: #00b894;">
+                <span style="font-weight:700; font-size:0.875rem;">L3</span>
+              </div>
+              <div class="metric-content">
+                <div class="metric-label">Current L3</div>
+                <div class="metric-value">85.4 <span class="metric-unit">A</span></div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Sidebar: Run State + Mode + Operator Panel State -->
+        <div class="overview-sidebar">
+
+          <!-- Run State -->
+          <div class="setpoint-card">
+            <div class="flex" style="display:flex; align-items:center; gap:0.75rem;">
+              <div class="icon-box" style="background-color: rgba(0,184,148,0.12); color: #2ec4a0; width:2.25rem; height:2.25rem;">
+                <i class="fa-solid fa-circle-play"></i>
+              </div>
+              <span style="font-size:0.8rem; color:#708090; font-weight:500;">Run State</span>
+            </div>
+            <div style="font-size:1.5rem; font-weight:700; color:#2ec4a0; margin-top:0.25rem;">Running</div>
+            <div style="font-size:0.75rem; color:#506070;">1,110 operating hours</div>
+          </div>
+
+          <!-- Operating Mode -->
+          <div class="setpoint-card">
+            <div style="display:flex; align-items:center; gap:0.75rem;">
+              <div class="icon-box" style="background-color: rgba(74,144,217,0.12); color: #4a90d9; width:2.25rem; height:2.25rem;">
+                <i class="fa-solid fa-sliders"></i>
+              </div>
+              <span style="font-size:0.8rem; color:#708090; font-weight:500;">Operating Mode</span>
+            </div>
+            <div style="font-size:1.5rem; font-weight:700; color:#4a90d9; margin-top:0.25rem;">Automatic</div>
+            <div style="font-size:0.75rem; color:#506070;">Priority 4 of 5</div>
+          </div>
+
+          <!-- Operator Panel State -->
+          <div class="setpoint-card">
+            <div style="display:flex; align-items:center; gap:0.75rem;">
+              <div class="icon-box" style="background-color: rgba(80,96,112,0.15); color: #708090; width:2.25rem; height:2.25rem;">
+                <i class="fa-solid fa-gamepad"></i>
+              </div>
+              <span style="font-size:0.8rem; color:#708090; font-weight:500;">Local Operator Panel</span>
+            </div>
+            <div style="display:flex; gap:0.5rem; margin-top:0.375rem; flex-wrap:wrap;">
+              <span style="font-size:0.75rem; padding:0.2rem 0.5rem; background-color:rgba(74,144,217,0.15); color:#4a90d9; border-radius:0.25rem; font-weight:600;">Op: Off</span>
+              <span style="font-size:0.75rem; padding:0.2rem 0.5rem; background-color:rgba(74,144,217,0.15); color:#4a90d9; border-radius:0.25rem; font-weight:600;">Req: Off</span>
+              <span style="font-size:0.75rem; padding:0.2rem 0.5rem; background-color:rgba(74,144,217,0.15); color:#4a90d9; border-radius:0.25rem; font-weight:600;">Synch: Off</span>
+            </div>
+          </div>
+
+          <!-- Power Summary -->
+          <div class="setpoint-card">
+            <div style="display:flex; align-items:center; gap:0.75rem;">
+              <div class="icon-box" style="background-color: rgba(0,184,148,0.12); color: #2ec4a0; width:2.25rem; height:2.25rem;">
+                <i class="fa-solid fa-gauge-high"></i>
+              </div>
+              <span style="font-size:0.8rem; color:#708090; font-weight:500;">Load</span>
+            </div>
+            <div style="display:flex; justify-content:space-between; align-items:baseline; margin-top:0.25rem;">
+              <span style="font-size:1.5rem; font-weight:700; color:#e8ecf2;">1,624 <span style="font-size:0.75rem; color:#506070; font-weight:400;">kW</span></span>
+              <span style="font-size:1.125rem; font-weight:600; color:#2ec4a0;">49.1%</span>
+            </div>
+            <!-- Simple bar -->
+            <div style="height:0.375rem; background-color:#152030; border-radius:9999px; overflow:hidden; margin-top:0.25rem;">
+              <div style="width:49.1%; height:100%; background-color:#00b894; border-radius:9999px;"></div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- ==================== TAB 2: ENGINE DIAGNOSTICS (placeholder) ==================== -->
+    <div id="tab-engine" class="tab-panel">
+      <div class="placeholder-msg">Engine Diagnostics</div>
+    </div>
+
+    <!-- ==================== TAB 3: CONTROL / MODES (placeholder) ==================== -->
+    <div id="tab-control" class="tab-panel">
+      <div class="placeholder-msg">Control / Modes</div>
+    </div>
+
+    <!-- ==================== TAB 4: ALARMS / ALERTS (placeholder) ==================== -->
+    <div id="tab-alarms" class="tab-panel">
+      <div class="placeholder-msg">Alarms / Alerts</div>
+    </div>
+
+    <!-- ==================== TAB 5: TAG DATA (placeholder) ==================== -->
+    <div id="tab-tagdata" class="tab-panel">
+      <div class="placeholder-msg">Tag Data</div>
+    </div>
+
+  </div>
+
+  <script>
+    function switchTab(name) {
+      var panels = document.querySelectorAll('.tab-panel');
+      for (var i = 0; i &lt; panels.length; i++) {
+        panels[i].classList.remove('active');
+      }
+      var btns = document.querySelectorAll('.tab-btn');
+      for (var i = 0; i &lt; btns.length; i++) {
+        btns[i].classList.remove('active');
+      }
+      document.getElementById('tab-' + name).classList.add('active');
+      var labels = {overview:'Overview', engine:'Engine Diagnostics', control:'Control / Modes', alarms:'Alarms / Alerts', tagdata:'Tag Data'};
+      for (var i = 0; i &lt; btns.length; i++) {
+        if (btns[i].textContent === labels[name]) {
+          btns[i].classList.add('active');
+        }
+      }
+    }
+  </script>
+
+      </body>
+    </html>
+  </foreignObject>
+</svg>
