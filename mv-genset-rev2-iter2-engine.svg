@@ -1,0 +1,1130 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" style="background-color: #050b14;">
+  <foreignObject width="100%" height="100%">
+    <html xmlns="http://www.w3.org/1999/xhtml">
+      <head>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+        <style>
+*, ::before, ::after {
+  box-sizing: border-box;
+  border-width: 0;
+  border-style: solid;
+  border-color: #e5e7eb;
+}
+
+html, :host {
+  line-height: 1.5;
+  font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+body {
+  margin: 0;
+  background-color: #050b14;
+  color: #f8fafc;
+  font-family: system-ui, -apple-system, sans-serif;
+  background-image: radial-gradient(circle at 50% 0%, #0f172a 0%, #050b14 70%);
+  background-attachment: fixed;
+  min-height: 100vh;
+  padding: 1.5rem;
+}
+
+/* ===== Tab System ===== */
+.tab-bar {
+  display: flex;
+  gap: 2px;
+  background-color: #0f172a;
+  border: 1px solid #1e293b;
+  border-radius: 0.5rem 0.5rem 0 0;
+  padding: 0.25rem 0.25rem 0;
+  overflow-x: auto;
+}
+
+.tab-btn {
+  padding: 0.625rem 1.25rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #94a3b8;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.2s;
+  font-family: inherit;
+}
+
+.tab-btn:hover {
+  color: #cbd5e1;
+  background-color: rgba(30, 41, 59, 0.5);
+}
+
+.tab-btn.active {
+  color: #10b981;
+  border-bottom-color: #10b981;
+  background-color: rgba(16, 185, 129, 0.05);
+}
+
+.tab-content-area {
+  background-color: #0f172a;
+  border: 1px solid #1e293b;
+  border-top: none;
+  border-radius: 0 0 0.5rem 0.5rem;
+  padding: 1.25rem;
+  min-height: 70vh;
+}
+
+.tab-panel { display: none; }
+.tab-panel.active { display: block; }
+
+/* ===== Header ===== */
+.screen-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.asset-title {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.asset-title h1 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #f8fafc;
+  margin: 0;
+}
+
+.status-badge {
+  padding: 0.25rem 0.75rem;
+  background-color: rgba(16, 185, 129, 0.1);
+  color: #34d399;
+  font-size: 0.75rem;
+  font-weight: 700;
+  border-radius: 9999px;
+  border: 1px solid rgba(16, 185, 129, 0.2);
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+}
+
+.status-dot {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background-color: #10b981;
+}
+
+/* ===== Metric Cards (from Rev 1) ===== */
+.metric-card {
+  background-color: #0a1628;
+  border: 1px solid #1e293b;
+  border-radius: 0.5rem;
+  padding: 0.875rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  transition: border-color 0.2s;
+}
+
+.metric-card:hover {
+  border-color: #334155;
+}
+
+.icon-box {
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.metric-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 0;
+}
+
+.metric-label {
+  font-size: 0.75rem;
+  color: #94a3b8;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 0.125rem;
+}
+
+.metric-value {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #f8fafc;
+  display: flex;
+  align-items: baseline;
+  gap: 0.25rem;
+  line-height: 1.2;
+}
+
+.metric-unit {
+  font-size: 0.75rem;
+  color: #64748b;
+  font-weight: 400;
+}
+
+/* ===== Grid Layouts ===== */
+.grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.75rem; }
+.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.75rem; }
+.grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.75rem; }
+
+/* ===== Section Headers ===== */
+.section-title {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin: 1.25rem 0 0.625rem 0;
+}
+
+.section-title:first-child {
+  margin-top: 0;
+}
+
+/* ===== Setpoint / Power Cards (from Rev 1) ===== */
+.setpoint-card {
+  background-color: #0a1628;
+  border: 1px solid #1e293b;
+  border-radius: 0.5rem;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+/* ===== Buttons (from Rev 1) ===== */
+.btn-control {
+  background-color: #1e293b;
+  color: #cbd5e1;
+  border: 1px solid #334155;
+  padding: 0.5rem 1rem;
+  border-radius: 0.375rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: all 0.2s;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.btn-control:hover {
+  background-color: #334155;
+  color: white;
+}
+
+.btn-primary {
+  background-color: #10b981;
+  color: #022c22;
+  border: 1px solid #059669;
+  box-shadow: 0 0 10px rgba(16, 185, 129, 0.2);
+}
+
+.btn-primary:hover {
+  background-color: #059669;
+  color: white;
+}
+
+/* ===== GCB Status ===== */
+.gcb-status {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background-color: #0a1628;
+  border: 1px solid #1e293b;
+  border-radius: 0.5rem;
+  padding: 1rem 1.25rem;
+}
+
+.gcb-indicator {
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.75rem;
+}
+
+/* ===== Command Bar ===== */
+.command-bar {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.command-bar .btn-control {
+  flex: none;
+}
+
+/* ===== Priority Selector ===== */
+.priority-selector {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: #1e293b;
+  border: 1px solid #334155;
+  border-radius: 0.375rem;
+  padding: 0.375rem 0.75rem;
+  font-size: 0.875rem;
+  color: #cbd5e1;
+}
+
+.priority-selector select {
+  background-color: #0f172a;
+  color: #f8fafc;
+  border: 1px solid #334155;
+  border-radius: 0.25rem;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.875rem;
+  font-family: inherit;
+}
+
+/* ===== Operator Panel (from Rev 1) ===== */
+.operator-panel {
+  background: linear-gradient(to bottom, #9ca3af, #d1d5db);
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  width: 100%;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  border: 1px solid #6b7280;
+  display: flex;
+  flex-direction: column;
+}
+
+.panel-header {
+  background: linear-gradient(to bottom, #6b7280, #4b5563);
+  color: white;
+  padding: 0.25rem 0.75rem;
+  font-weight: 600;
+  font-size: 0.875rem;
+  border-top-left-radius: 0.375rem;
+  border-top-right-radius: 0.375rem;
+  margin: -0.5rem -0.5rem 0.5rem -0.5rem;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.panel-content {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  justify-content: space-between;
+  flex-grow: 1;
+}
+
+.control-column {
+  background-color: #d1d5db;
+  border: 1px solid #9ca3af;
+  border-radius: 0.25rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  height: 100%;
+  box-shadow: inset 0 1px 3px rgba(255,255,255,0.5);
+}
+
+.column-header {
+  color: #6b7280;
+  font-weight: 600;
+  font-size: 0.75rem;
+  padding: 0.25rem 0.5rem;
+}
+
+.btn-v3 {
+  background: linear-gradient(to bottom, #f3f4f6, #d1d5db);
+  border: 1px solid #9ca3af;
+  border-top-color: #e5e7eb;
+  color: #374151;
+  font-weight: 500;
+  font-size: 0.875rem;
+  padding: 0.5rem;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.1s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+  font-family: inherit;
+}
+
+.btn-v3:hover {
+  background: linear-gradient(to bottom, #e5e7eb, #9ca3af);
+}
+
+.btn-v3.active-blue {
+  background: linear-gradient(to bottom, #60a5fa, #3b82f6);
+  color: white;
+  border-color: #2563eb;
+  border-top-color: #93c5fd;
+  text-shadow: 0 1px 1px rgba(0,0,0,0.2);
+}
+
+.btn-v3.active-green {
+  background: linear-gradient(to bottom, #34d399, #10b981);
+  color: white;
+  border-color: #059669;
+  border-top-color: #6ee7b7;
+  text-shadow: 0 1px 1px rgba(0,0,0,0.2);
+}
+
+.middle-controls {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2px;
+  position: relative;
+  height: 100%;
+}
+
+.btn-action {
+  background: linear-gradient(to bottom, #d1d5db, #9ca3af);
+  border: 1px solid #6b7280;
+  color: white;
+  text-shadow: 0 1px 1px rgba(0,0,0,0.3);
+  border-radius: 0.125rem;
+  padding: 0.5rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  width: 70px;
+  height: 48px;
+  text-align: center;
+  position: relative;
+  z-index: 10;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  font-family: inherit;
+}
+
+.lock-icon-container {
+  background: linear-gradient(to bottom, #e5e7eb, #d1d5db);
+  border-top: 1px solid #9ca3af;
+  padding: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom-left-radius: 0.25rem;
+  border-bottom-right-radius: 0.25rem;
+  margin-top: auto;
+}
+
+.lock-icon {
+  color: #b45309;
+  font-size: 1rem;
+  filter: drop-shadow(0 1px 1px rgba(255,255,255,0.8));
+}
+
+.radio-wave {
+  position: absolute;
+  color: #9ca3af;
+  font-size: 0.6rem;
+  top: -6px;
+  left: -8px;
+  transform: rotate(-45deg);
+}
+
+.connector {
+  position: absolute;
+  width: 10px;
+  height: 3px;
+  background-color: #9ca3af;
+  top: 50%;
+  z-index: 0;
+}
+
+.connector-left {
+  left: -10px;
+}
+
+.connector-left::before {
+  content: '';
+  position: absolute;
+  left: -20px;
+  top: -14.5px;
+  border-top: 16px solid transparent;
+  border-bottom: 16px solid transparent;
+  border-right: 24px solid #9ca3af;
+}
+
+.connector-right {
+  right: -16px;
+}
+
+.connector-right::after {
+  content: '';
+  position: absolute;
+  right: -2px;
+  top: -3px;
+  border-top: 4px solid transparent;
+  border-bottom: 4px solid transparent;
+  border-left: 6px solid #9ca3af;
+}
+
+/* ===== Overview Layout ===== */
+.overview-layout {
+  display: flex;
+  gap: 1.25rem;
+}
+
+.overview-main {
+  flex: 1;
+  min-width: 0;
+}
+
+.overview-sidebar {
+  width: 16rem;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+/* ===== Placeholder for future tabs ===== */
+.placeholder-msg {
+  color: #64748b;
+  font-size: 0.875rem;
+  padding: 2rem;
+  text-align: center;
+}
+
+        </style>
+      </head>
+      <body>
+
+  <!-- Screen Header -->
+  <div class="screen-header">
+    <div class="asset-title">
+      <h1>MV Genset — G5</h1>
+      <div class="status-badge">
+        <div class="status-dot"></div>
+        Running
+      </div>
+    </div>
+  </div>
+
+  <!-- Tab Bar -->
+  <div class="tab-bar">
+    <button class="tab-btn" onclick="switchTab('overview')">Overview</button>
+    <button class="tab-btn active" onclick="switchTab('engine')">Engine Diagnostics</button>
+    <button class="tab-btn" onclick="switchTab('control')">Control / Modes</button>
+    <button class="tab-btn" onclick="switchTab('alarms')">Alarms / Alerts</button>
+    <button class="tab-btn" onclick="switchTab('tagdata')">Tag Data</button>
+  </div>
+
+  <!-- Tab Content Area -->
+  <div class="tab-content-area">
+
+    <!-- ==================== TAB 1: OVERVIEW ==================== -->
+    <div id="tab-overview" class="tab-panel">
+      <div class="overview-layout">
+
+        <!-- Main Content -->
+        <div class="overview-main">
+
+          <!-- Command Bar -->
+          <div class="section-title">Commands</div>
+          <div class="command-bar" style="margin-bottom: 0.25rem;">
+            <button class="btn-control btn-primary" style="padding: 0.5rem 1.25rem;">
+              <i class="fa-solid fa-play" style="margin-right: 0.375rem;"></i> Start
+            </button>
+            <button class="btn-control" style="padding: 0.5rem 1.25rem;">
+              <i class="fa-solid fa-stop" style="margin-right: 0.375rem;"></i> Stop
+            </button>
+            <button class="btn-control" style="padding: 0.5rem 1.25rem;">
+              <i class="fa-solid fa-bell" style="margin-right: 0.375rem;"></i> Alarm Ack
+            </button>
+            <div style="width: 1px; height: 1.75rem; background-color: #334155; margin: 0 0.25rem;"></div>
+            <button class="btn-control" style="padding: 0.5rem 1.25rem;">Block</button>
+            <button class="btn-control btn-primary" style="padding: 0.5rem 1.25rem;">Auto</button>
+            <button class="btn-control" style="padding: 0.5rem 1.25rem;">Manual</button>
+            <div style="width: 1px; height: 1.75rem; background-color: #334155; margin: 0 0.25rem;"></div>
+            <div class="priority-selector">
+              <span>Priority</span>
+              <select>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option selected="">4</option>
+                <option>5</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Electrical Metrics -->
+          <div class="section-title">Electrical</div>
+          <div class="grid-4">
+            <!-- Real Power -->
+            <div class="metric-card">
+              <div class="icon-box" style="background-color: rgba(16,185,129,0.1); color: #34d399;">
+                <i class="fa-solid fa-bolt text-xl"></i>
+              </div>
+              <div class="metric-content">
+                <div class="metric-label">Real Power</div>
+                <div class="metric-value">1,624 <span class="metric-unit">kW</span></div>
+              </div>
+            </div>
+            <!-- Reactive Power -->
+            <div class="metric-card">
+              <div class="icon-box" style="background-color: rgba(96,165,250,0.1); color: #60a5fa;">
+                <i class="fa-solid fa-bolt text-xl"></i>
+              </div>
+              <div class="metric-content">
+                <div class="metric-label">Reactive Power</div>
+                <div class="metric-value">40 <span class="metric-unit">kVAr</span></div>
+              </div>
+            </div>
+            <!-- Apparent Power -->
+            <div class="metric-card">
+              <div class="icon-box" style="background-color: rgba(168,85,247,0.1); color: #a855f7;">
+                <i class="fa-solid fa-bolt text-xl"></i>
+              </div>
+              <div class="metric-content">
+                <div class="metric-label">Apparent Power</div>
+                <div class="metric-value">1,625 <span class="metric-unit">kVA</span></div>
+              </div>
+            </div>
+            <!-- Power Factor -->
+            <div class="metric-card">
+              <div class="icon-box" style="background-color: rgba(16,185,129,0.1); color: #34d399;">
+                <i class="fa-solid fa-wave-square text-xl"></i>
+              </div>
+              <div class="metric-content">
+                <div class="metric-label">Power Factor</div>
+                <div class="metric-value">0.999</div>
+              </div>
+            </div>
+            <!-- Frequency -->
+            <div class="metric-card">
+              <div class="icon-box" style="background-color: rgba(96,165,250,0.1); color: #60a5fa;">
+                <i class="fa-solid fa-wave-square text-xl"></i>
+              </div>
+              <div class="metric-content">
+                <div class="metric-label">Frequency</div>
+                <div class="metric-value">50.01 <span class="metric-unit">Hz</span></div>
+              </div>
+            </div>
+            <!-- GCB Status -->
+            <div class="metric-card">
+              <div class="icon-box" style="background-color: rgba(16,185,129,0.1); color: #34d399;">
+                <i class="fa-solid fa-toggle-on text-xl"></i>
+              </div>
+              <div class="metric-content">
+                <div class="metric-label">GCB Status</div>
+                <div class="metric-value" style="color: #34d399;">Closed</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Phase Voltages -->
+          <div class="section-title">Phase Voltages</div>
+          <div class="grid-3">
+            <div class="metric-card">
+              <div class="icon-box" style="background-color: rgba(251,191,36,0.1); color: #fbbf24;">
+                <span style="font-weight:700; font-size:0.875rem;">L1</span>
+              </div>
+              <div class="metric-content">
+                <div class="metric-label">Voltage L1-N</div>
+                <div class="metric-value">6,351 <span class="metric-unit">V</span></div>
+              </div>
+            </div>
+            <div class="metric-card">
+              <div class="icon-box" style="background-color: rgba(251,191,36,0.1); color: #fbbf24;">
+                <span style="font-weight:700; font-size:0.875rem;">L2</span>
+              </div>
+              <div class="metric-content">
+                <div class="metric-label">Voltage L2-N</div>
+                <div class="metric-value">6,348 <span class="metric-unit">V</span></div>
+              </div>
+            </div>
+            <div class="metric-card">
+              <div class="icon-box" style="background-color: rgba(251,191,36,0.1); color: #fbbf24;">
+                <span style="font-weight:700; font-size:0.875rem;">L3</span>
+              </div>
+              <div class="metric-content">
+                <div class="metric-label">Voltage L3-N</div>
+                <div class="metric-value">6,355 <span class="metric-unit">V</span></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Phase Currents -->
+          <div class="section-title">Phase Currents</div>
+          <div class="grid-3">
+            <div class="metric-card">
+              <div class="icon-box" style="background-color: rgba(251,146,60,0.1); color: #fb923c;">
+                <span style="font-weight:700; font-size:0.875rem;">L1</span>
+              </div>
+              <div class="metric-content">
+                <div class="metric-label">Current L1</div>
+                <div class="metric-value">85.2 <span class="metric-unit">A</span></div>
+              </div>
+            </div>
+            <div class="metric-card">
+              <div class="icon-box" style="background-color: rgba(251,146,60,0.1); color: #fb923c;">
+                <span style="font-weight:700; font-size:0.875rem;">L2</span>
+              </div>
+              <div class="metric-content">
+                <div class="metric-label">Current L2</div>
+                <div class="metric-value">85.0 <span class="metric-unit">A</span></div>
+              </div>
+            </div>
+            <div class="metric-card">
+              <div class="icon-box" style="background-color: rgba(251,146,60,0.1); color: #fb923c;">
+                <span style="font-weight:700; font-size:0.875rem;">L3</span>
+              </div>
+              <div class="metric-content">
+                <div class="metric-label">Current L3</div>
+                <div class="metric-value">85.4 <span class="metric-unit">A</span></div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Sidebar: Run State + Mode + Operator Panel State -->
+        <div class="overview-sidebar">
+
+          <!-- Run State -->
+          <div class="setpoint-card">
+            <div class="flex" style="display:flex; align-items:center; gap:0.75rem;">
+              <div class="icon-box" style="background-color: rgba(16,185,129,0.1); color: #34d399; width:2.25rem; height:2.25rem;">
+                <i class="fa-solid fa-circle-play"></i>
+              </div>
+              <span style="font-size:0.8rem; color:#94a3b8; font-weight:500;">Run State</span>
+            </div>
+            <div style="font-size:1.5rem; font-weight:700; color:#34d399; margin-top:0.25rem;">Running</div>
+            <div style="font-size:0.75rem; color:#64748b;">1,110 operating hours</div>
+          </div>
+
+          <!-- Operating Mode -->
+          <div class="setpoint-card">
+            <div style="display:flex; align-items:center; gap:0.75rem;">
+              <div class="icon-box" style="background-color: rgba(96,165,250,0.1); color: #60a5fa; width:2.25rem; height:2.25rem;">
+                <i class="fa-solid fa-sliders"></i>
+              </div>
+              <span style="font-size:0.8rem; color:#94a3b8; font-weight:500;">Operating Mode</span>
+            </div>
+            <div style="font-size:1.5rem; font-weight:700; color:#60a5fa; margin-top:0.25rem;">Automatic</div>
+            <div style="font-size:0.75rem; color:#64748b;">Priority 4 of 5</div>
+          </div>
+
+          <!-- Operator Panel State -->
+          <div class="setpoint-card">
+            <div style="display:flex; align-items:center; gap:0.75rem;">
+              <div class="icon-box" style="background-color: rgba(100,116,139,0.1); color: #94a3b8; width:2.25rem; height:2.25rem;">
+                <i class="fa-solid fa-gamepad"></i>
+              </div>
+              <span style="font-size:0.8rem; color:#94a3b8; font-weight:500;">Local Operator Panel</span>
+            </div>
+            <div style="display:flex; gap:0.5rem; margin-top:0.375rem; flex-wrap:wrap;">
+              <span style="font-size:0.75rem; padding:0.2rem 0.5rem; background-color:rgba(96,165,250,0.15); color:#60a5fa; border-radius:0.25rem; font-weight:600;">Op: Off</span>
+              <span style="font-size:0.75rem; padding:0.2rem 0.5rem; background-color:rgba(96,165,250,0.15); color:#60a5fa; border-radius:0.25rem; font-weight:600;">Req: Off</span>
+              <span style="font-size:0.75rem; padding:0.2rem 0.5rem; background-color:rgba(96,165,250,0.15); color:#60a5fa; border-radius:0.25rem; font-weight:600;">Synch: Off</span>
+            </div>
+          </div>
+
+          <!-- Power Summary -->
+          <div class="setpoint-card">
+            <div style="display:flex; align-items:center; gap:0.75rem;">
+              <div class="icon-box" style="background-color: rgba(16,185,129,0.1); color: #34d399; width:2.25rem; height:2.25rem;">
+                <i class="fa-solid fa-gauge-high"></i>
+              </div>
+              <span style="font-size:0.8rem; color:#94a3b8; font-weight:500;">Load</span>
+            </div>
+            <div style="display:flex; justify-content:space-between; align-items:baseline; margin-top:0.25rem;">
+              <span style="font-size:1.5rem; font-weight:700; color:#f8fafc;">1,624 <span style="font-size:0.75rem; color:#64748b; font-weight:400;">kW</span></span>
+              <span style="font-size:1.125rem; font-weight:600; color:#34d399;">49.1%</span>
+            </div>
+            <!-- Simple bar -->
+            <div style="height:0.375rem; background-color:#1e293b; border-radius:9999px; overflow:hidden; margin-top:0.25rem;">
+              <div style="width:49.1%; height:100%; background-color:#10b981; border-radius:9999px;"></div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- ==================== TAB 2: ENGINE DIAGNOSTICS ==================== -->
+    <div id="tab-engine" class="tab-panel active">
+
+      <!-- Engine Speed -->
+      <div class="section-title">Engine</div>
+      <div class="grid-4">
+        <div class="metric-card">
+          <div class="icon-box" style="background-color: rgba(96,165,250,0.1); color: #60a5fa;">
+            <i class="fa-solid fa-gauge-high text-xl"></i>
+          </div>
+          <div class="metric-content">
+            <div class="metric-label">Engine Speed</div>
+            <div class="metric-value">1,505 <span class="metric-unit">rpm</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pressures -->
+      <div class="section-title">Pressures</div>
+      <div class="grid-4">
+        <div class="metric-card">
+          <div class="icon-box" style="background-color: rgba(96,165,250,0.1); color: #60a5fa;">
+            <i class="fa-solid fa-gauge text-xl"></i>
+          </div>
+          <div class="metric-content">
+            <div class="metric-label">Fuel Gas Pressure</div>
+            <div class="metric-value">107.46 <span class="metric-unit">psi</span></div>
+          </div>
+        </div>
+        <div class="metric-card">
+          <div class="icon-box" style="background-color: rgba(251,191,36,0.1); color: #fbbf24;">
+            <i class="fa-solid fa-oil-can text-xl"></i>
+          </div>
+          <div class="metric-content">
+            <div class="metric-label">Engine Oil Pressure</div>
+            <div class="metric-value">59.25 <span class="metric-unit">psi</span></div>
+          </div>
+        </div>
+        <div class="metric-card">
+          <div class="icon-box" style="background-color: rgba(148,163,184,0.1); color: #94a3b8;">
+            <i class="fa-solid fa-wind text-xl"></i>
+          </div>
+          <div class="metric-content">
+            <div class="metric-label">Exhaust Pressure</div>
+            <div class="metric-value">2.14 <span class="metric-unit">psi</span></div>
+          </div>
+        </div>
+        <div class="metric-card">
+          <div class="icon-box" style="background-color: rgba(96,165,250,0.1); color: #60a5fa;">
+            <i class="fa-solid fa-droplet text-xl"></i>
+          </div>
+          <div class="metric-content">
+            <div class="metric-label">Cooling Water Pressure</div>
+            <div class="metric-value">37.43 <span class="metric-unit">psi</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Temperatures -->
+      <div class="section-title">Temperatures</div>
+      <div class="grid-4">
+        <div class="metric-card">
+          <div class="icon-box" style="background-color: rgba(96,165,250,0.1); color: #60a5fa;">
+            <i class="fa-solid fa-temperature-half text-xl"></i>
+          </div>
+          <div class="metric-content">
+            <div class="metric-label">Fuel Gas Temperature</div>
+            <div class="metric-value">38.2 <span class="metric-unit">°C</span></div>
+          </div>
+        </div>
+        <div class="metric-card">
+          <div class="icon-box" style="background-color: rgba(251,146,60,0.1); color: #fb923c;">
+            <i class="fa-solid fa-temperature-half text-xl"></i>
+          </div>
+          <div class="metric-content">
+            <div class="metric-label">Engine Oil Temperature</div>
+            <div class="metric-value">66.7 <span class="metric-unit">°C</span></div>
+          </div>
+        </div>
+        <div class="metric-card">
+          <div class="icon-box" style="background-color: rgba(239,68,68,0.1); color: #f87171;">
+            <i class="fa-solid fa-temperature-half text-xl"></i>
+          </div>
+          <div class="metric-content">
+            <div class="metric-label">Exhaust Temperature</div>
+            <div class="metric-value">472 <span class="metric-unit">°C</span></div>
+          </div>
+        </div>
+        <div class="metric-card">
+          <div class="icon-box" style="background-color: rgba(239,68,68,0.1); color: #f87171;">
+            <i class="fa-solid fa-temperature-half text-xl"></i>
+          </div>
+          <div class="metric-content">
+            <div class="metric-label">Turbo Temperature</div>
+            <div class="metric-value">498 <span class="metric-unit">°C</span></div>
+          </div>
+        </div>
+        <div class="metric-card">
+          <div class="icon-box" style="background-color: rgba(239,68,68,0.1); color: #f87171;">
+            <i class="fa-solid fa-temperature-half text-xl"></i>
+          </div>
+          <div class="metric-content">
+            <div class="metric-label">SCR Inlet Temperature</div>
+            <div class="metric-value">436 <span class="metric-unit">°C</span></div>
+          </div>
+        </div>
+        <div class="metric-card">
+          <div class="icon-box" style="background-color: rgba(251,146,60,0.1); color: #fb923c;">
+            <i class="fa-solid fa-temperature-half text-xl"></i>
+          </div>
+          <div class="metric-content">
+            <div class="metric-label">Cooling Water Temp</div>
+            <div class="metric-value">74.0 <span class="metric-unit">°C</span></div>
+          </div>
+        </div>
+        <div class="metric-card">
+          <div class="icon-box" style="background-color: rgba(251,146,60,0.1); color: #fb923c;">
+            <i class="fa-solid fa-temperature-half text-xl"></i>
+          </div>
+          <div class="metric-content">
+            <div class="metric-label">Return Water Temp</div>
+            <div class="metric-value">64.9 <span class="metric-unit">°C</span></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ==================== TAB 3: CONTROL / MODES ==================== -->
+    <div id="tab-control" class="tab-panel">
+
+      <div style="display:flex; gap:1.25rem;">
+
+        <!-- Left: Status Cards -->
+        <div style="flex:1; min-width:0;">
+
+          <!-- Mode & Authority -->
+          <div class="section-title">Mode &amp; Authority</div>
+          <div class="grid-3">
+            <div class="metric-card">
+              <div class="icon-box" style="background-color: rgba(96,165,250,0.1); color: #60a5fa;">
+                <i class="fa-solid fa-sliders text-xl"></i>
+              </div>
+              <div class="metric-content">
+                <div class="metric-label">Operation Selection</div>
+                <div class="metric-value" style="color:#60a5fa;">Off</div>
+              </div>
+            </div>
+            <div class="metric-card">
+              <div class="icon-box" style="background-color: rgba(96,165,250,0.1); color: #60a5fa;">
+                <i class="fa-solid fa-hand-pointer text-xl"></i>
+              </div>
+              <div class="metric-content">
+                <div class="metric-label">Request Selection</div>
+                <div class="metric-value" style="color:#60a5fa;">Off</div>
+              </div>
+            </div>
+            <div class="metric-card">
+              <div class="icon-box" style="background-color: rgba(96,165,250,0.1); color: #60a5fa;">
+                <i class="fa-solid fa-rotate text-xl"></i>
+              </div>
+              <div class="metric-content">
+                <div class="metric-label">Synch Selection</div>
+                <div class="metric-value" style="color:#60a5fa;">Off</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="grid-3" style="margin-top:0.75rem;">
+            <div class="metric-card">
+              <div class="icon-box" style="background-color: rgba(16,185,129,0.1); color: #34d399;">
+                <i class="fa-solid fa-tower-broadcast text-xl"></i>
+              </div>
+              <div class="metric-content">
+                <div class="metric-label">Control Context</div>
+                <div class="metric-value" style="color:#34d399;">Remote</div>
+              </div>
+            </div>
+            <div class="metric-card">
+              <div class="icon-box" style="background-color: rgba(16,185,129,0.1); color: #34d399;">
+                <i class="fa-solid fa-shield-halved text-xl"></i>
+              </div>
+              <div class="metric-content">
+                <div class="metric-label">Block / Auto / Manual</div>
+                <div class="metric-value" style="color:#34d399;">Automatic</div>
+              </div>
+            </div>
+            <div class="metric-card">
+              <div class="icon-box" style="background-color: rgba(251,191,36,0.1); color: #fbbf24;">
+                <i class="fa-solid fa-arrow-up-1-9 text-xl"></i>
+              </div>
+              <div class="metric-content">
+                <div class="metric-label">Priority Level</div>
+                <div class="metric-value">4 <span class="metric-unit">of 5</span></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Enable Context -->
+          <div class="section-title">Enable Context</div>
+          <div class="grid-3">
+            <div class="metric-card">
+              <div class="icon-box" style="background-color: rgba(16,185,129,0.1); color: #34d399;">
+                <i class="fa-solid fa-circle-check text-xl"></i>
+              </div>
+              <div class="metric-content">
+                <div class="metric-label">Start Enable</div>
+                <div class="metric-value" style="color:#34d399;">Enabled</div>
+              </div>
+            </div>
+            <div class="metric-card">
+              <div class="icon-box" style="background-color: rgba(16,185,129,0.1); color: #34d399;">
+                <i class="fa-solid fa-circle-check text-xl"></i>
+              </div>
+              <div class="metric-content">
+                <div class="metric-label">Stop Enable</div>
+                <div class="metric-value" style="color:#34d399;">Enabled</div>
+              </div>
+            </div>
+            <div class="metric-card">
+              <div class="icon-box" style="background-color: rgba(16,185,129,0.1); color: #34d399;">
+                <i class="fa-solid fa-toggle-on text-xl"></i>
+              </div>
+              <div class="metric-content">
+                <div class="metric-label">GCB Close Enable</div>
+                <div class="metric-value" style="color:#34d399;">Enabled</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Mode Status Notes -->
+          <div class="section-title">Mode Status</div>
+          <div style="background-color:#0a1628; border:1px solid #1e293b; border-radius:0.5rem; padding:1rem;">
+            <div style="display:flex; flex-direction:column; gap:0.625rem;">
+              <div style="display:flex; align-items:center; gap:0.625rem;">
+                <i class="fa-solid fa-circle-check" style="color:#34d399; font-size:0.875rem;"></i>
+                <span style="font-size:0.8125rem; color:#cbd5e1;">Control room commands are available — unit is in Remote + Automatic mode</span>
+              </div>
+              <div style="display:flex; align-items:center; gap:0.625rem;">
+                <i class="fa-solid fa-circle-check" style="color:#34d399; font-size:0.875rem;"></i>
+                <span style="font-size:0.8125rem; color:#cbd5e1;">Synchronisation is available via automatic synch check</span>
+              </div>
+              <div style="display:flex; align-items:center; gap:0.625rem;">
+                <i class="fa-solid fa-circle-info" style="color:#60a5fa; font-size:0.875rem;"></i>
+                <span style="font-size:0.8125rem; color:#cbd5e1;">Local operator panel switches are in Off position — no local override active</span>
+              </div>
+              <div style="display:flex; align-items:center; gap:0.625rem;">
+                <i class="fa-solid fa-circle-info" style="color:#60a5fa; font-size:0.875rem;"></i>
+                <span style="font-size:0.8125rem; color:#cbd5e1;">Genset priority is 4 — will be dispatched after units 1–3</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Right: Operator Panel (from Rev 1) -->
+        <div style="width:22rem; flex-shrink:0;">
+          <div class="section-title">Local Operator Panel</div>
+          <div class="operator-panel" style="height: auto;">
+            <div class="panel-header">
+              <div>Genset Local Operator Panel</div>
+              <div style="padding:0.125rem 0.5rem; background-color:#0f172a; color:#34d399; font-size:0.75rem; font-weight:700; border-radius:9999px; border:1px solid #475569; display:flex; align-items:center; gap:0.375rem;">
+                <div style="width:0.375rem; height:0.375rem; border-radius:50%; background-color:#10b981;"></div>G5
+              </div>
+            </div>
+            <div class="panel-content">
+              <!-- Operation Column -->
+              <div class="control-column">
+                <div class="column-header" style="color:#6b7280;">Operation</div>
+                <div style="display:flex; flex-direction:column; border-top:1px solid #9ca3af; flex-grow:1;">
+                  <button class="btn-v3 active-blue">Off</button>
+                  <button class="btn-v3">Man</button>
+                  <button class="btn-v3">Aut</button>
+                </div>
+                <div class="lock-icon-container" style="position:relative;">
+                  <div style="position:relative;">
+                    <i class="fa-solid fa-wifi radio-wave"></i>
+                    <i class="fa-solid fa-lock lock-icon"></i>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Middle Start/Stop Controls -->
+              <div class="middle-controls" style="margin-left:16px; margin-top:-24px;">
+                <div class="connector connector-left"></div>
+                <button class="btn-action">Start</button>
+                <button class="btn-action">Stop</button>
+              </div>
+
+              <!-- Request Column -->
+              <div class="control-column">
+                <div class="column-header" style="color:#6b7280;">Request</div>
+                <div style="display:flex; flex-direction:column; border-top:1px solid #9ca3af; flex-grow:1;">
+                  <button class="btn-v3 active-blue">Off</button>
+                  <button class="btn-v3">On</button>
+                  <button class="btn-v3">Remote</button>
+                </div>
+                <div class="lock-icon-container" style="position:relative;">
+                  <div style="position:relative;">
+                    <i class="fa-solid fa-wifi radio-wave"></i>
+                    <i class="fa-solid fa-lock lock-icon"></i>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Synch Column -->
+              <div class="control-column">
+                <div class="column-header" style="color:#6b7280;">Synch</div>
+                <div style="display:flex; flex-direction:column; border-top:1px solid #9ca3af; flex-grow:1;">
+                  <button class="btn-v3 active-blue">Off</button>
+                  <button class="btn-v3">Man</button>
+                  <button class="btn-v3">Aut</button>
+                </div>
+                <div class="lock-icon-container" style="position:relative;">
+                  <div style="position:relative;">
+                    <i class="fa-solid fa-wifi radio-wave"></i>
+                    <i class="fa-solid fa-lock lock-icon"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ==================== TAB 4: ALARMS / ALERTS (placeholder) ==================== -->
+    <div id="tab-alarms" class="tab-panel">
+      <div class="placeholder-msg">Alarms / Alerts — coming next</div>
+    </div>
+
+    <!-- ==================== TAB 5: TAG DATA (placeholder) ==================== -->
+    <div id="tab-tagdata" class="tab-panel">
+      <div class="placeholder-msg">Tag Data — coming next</div>
+    </div>
+
+  </div>
+
+  <script>
+    function switchTab(name) {
+      // Hide all panels
+      var panels = document.querySelectorAll('.tab-panel');
+      for (var i = 0; i &lt; panels.length; i++) {
+        panels[i].classList.remove('active');
+      }
+      // Deactivate all buttons
+      var btns = document.querySelectorAll('.tab-btn');
+      for (var i = 0; i &lt; btns.length; i++) {
+        btns[i].classList.remove('active');
+      }
+      // Activate selected
+      document.getElementById('tab-' + name).classList.add('active');
+      // Find matching button
+      var labels = {overview:'Overview', engine:'Engine Diagnostics', control:'Control / Modes', alarms:'Alarms / Alerts', tagdata:'Tag Data'};
+      for (var i = 0; i &lt; btns.length; i++) {
+        if (btns[i].textContent === labels[name]) {
+          btns[i].classList.add('active');
+        }
+      }
+    }
+  </script>
+
+      </body>
+    </html>
+  </foreignObject>
+</svg>
