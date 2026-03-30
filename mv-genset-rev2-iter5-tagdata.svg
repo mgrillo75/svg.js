@@ -520,18 +520,18 @@ body {
 
   <!-- Tab Bar -->
   <div class="tab-bar">
-    <button class="tab-btn active" onclick="switchTab('overview')">Overview</button>
+    <button class="tab-btn" onclick="switchTab('overview')">Overview</button>
     <button class="tab-btn" onclick="switchTab('engine')">Engine Diagnostics</button>
     <button class="tab-btn" onclick="switchTab('control')">Control / Modes</button>
     <button class="tab-btn" onclick="switchTab('alarms')">Alarms / Alerts</button>
-    <button class="tab-btn" onclick="switchTab('tagdata')">Tag Data</button>
+    <button class="tab-btn active" onclick="switchTab('tagdata')">Tag Data</button>
   </div>
 
   <!-- Tab Content Area -->
   <div class="tab-content-area">
 
     <!-- ==================== TAB 1: OVERVIEW ==================== -->
-    <div id="tab-overview" class="tab-panel active">
+    <div id="tab-overview" class="tab-panel">
       <div class="overview-layout">
 
         <!-- Main Content -->
@@ -1233,7 +1233,7 @@ body {
     </div>
 
     <!-- ==================== TAB 5: TAG DATA ==================== -->
-    <div id="tab-tagdata" class="tab-panel">
+    <div id="tab-tagdata" class="tab-panel active">
 
       <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:1rem;">
         <div style="display:flex; align-items:center; gap:0.75rem;">
