@@ -520,10 +520,10 @@ body {
 
   <!-- Tab Bar -->
   <div class="tab-bar">
-    <button class="tab-btn active" onclick="switchTab('overview')">Overview</button>
+    <button class="tab-btn" onclick="switchTab('overview')">Overview</button>
     <button class="tab-btn" onclick="switchTab('engine')">Engine Diagnostics</button>
     <button class="tab-btn" onclick="switchTab('control')">Control / Modes</button>
-    <button class="tab-btn" onclick="switchTab('alarms')">Alarms / Alerts</button>
+    <button class="tab-btn active" onclick="switchTab('alarms')">Alarms / Alerts</button>
     <button class="tab-btn" onclick="switchTab('tagdata')">Tag Data</button>
   </div>
 
@@ -531,7 +531,7 @@ body {
   <div class="tab-content-area">
 
     <!-- ==================== TAB 1: OVERVIEW ==================== -->
-    <div id="tab-overview" class="tab-panel active">
+    <div id="tab-overview" class="tab-panel">
       <div class="overview-layout">
 
         <!-- Main Content -->
@@ -1089,7 +1089,7 @@ body {
     </div>
 
     <!-- ==================== TAB 4: ALARMS / ALERTS ==================== -->
-    <div id="tab-alarms" class="tab-panel">
+    <div id="tab-alarms" class="tab-panel active">
 
       <!-- Alarm Ack Command -->
       <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:1rem;">
