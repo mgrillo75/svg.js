@@ -5,1694 +5,807 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
         <style>
 *, ::before, ::after {
-  --tw-border-spacing-x: 0;
-  --tw-border-spacing-y: 0;
-  --tw-translate-x: 0;
-  --tw-translate-y: 0;
-  --tw-rotate: 0;
-  --tw-skew-x: 0;
-  --tw-skew-y: 0;
-  --tw-scale-x: 1;
-  --tw-scale-y: 1;
-  --tw-pan-x:  ;
-  --tw-pan-y:  ;
-  --tw-pinch-zoom:  ;
-  --tw-scroll-snap-strictness: proximity;
-  --tw-gradient-from-position:  ;
-  --tw-gradient-via-position:  ;
-  --tw-gradient-to-position:  ;
-  --tw-ordinal:  ;
-  --tw-slashed-zero:  ;
-  --tw-numeric-figure:  ;
-  --tw-numeric-spacing:  ;
-  --tw-numeric-fraction:  ;
-  --tw-ring-inset:  ;
-  --tw-ring-offset-width: 0px;
-  --tw-ring-offset-color: #fff;
-  --tw-ring-color: rgb(59 130 246 / 0.5);
-  --tw-ring-offset-shadow: 0 0 #0000;
-  --tw-ring-shadow: 0 0 #0000;
-  --tw-shadow: 0 0 #0000;
-  --tw-shadow-colored: 0 0 #0000;
-  --tw-blur:  ;
-  --tw-brightness:  ;
-  --tw-contrast:  ;
-  --tw-grayscale:  ;
-  --tw-hue-rotate:  ;
-  --tw-invert:  ;
-  --tw-saturate:  ;
-  --tw-sepia:  ;
-  --tw-drop-shadow:  ;
-  --tw-backdrop-blur:  ;
-  --tw-backdrop-brightness:  ;
-  --tw-backdrop-contrast:  ;
-  --tw-backdrop-grayscale:  ;
-  --tw-backdrop-hue-rotate:  ;
-  --tw-backdrop-invert:  ;
-  --tw-backdrop-opacity:  ;
-  --tw-backdrop-saturate:  ;
-  --tw-backdrop-sepia:  ;
-  --tw-contain-size:  ;
-  --tw-contain-layout:  ;
-  --tw-contain-paint:  ;
-  --tw-contain-style:  ;
-}
-
-::backdrop {
-  --tw-border-spacing-x: 0;
-  --tw-border-spacing-y: 0;
-  --tw-translate-x: 0;
-  --tw-translate-y: 0;
-  --tw-rotate: 0;
-  --tw-skew-x: 0;
-  --tw-skew-y: 0;
-  --tw-scale-x: 1;
-  --tw-scale-y: 1;
-  --tw-pan-x:  ;
-  --tw-pan-y:  ;
-  --tw-pinch-zoom:  ;
-  --tw-scroll-snap-strictness: proximity;
-  --tw-gradient-from-position:  ;
-  --tw-gradient-via-position:  ;
-  --tw-gradient-to-position:  ;
-  --tw-ordinal:  ;
-  --tw-slashed-zero:  ;
-  --tw-numeric-figure:  ;
-  --tw-numeric-spacing:  ;
-  --tw-numeric-fraction:  ;
-  --tw-ring-inset:  ;
-  --tw-ring-offset-width: 0px;
-  --tw-ring-offset-color: #fff;
-  --tw-ring-color: rgb(59 130 246 / 0.5);
-  --tw-ring-offset-shadow: 0 0 #0000;
-  --tw-ring-shadow: 0 0 #0000;
-  --tw-shadow: 0 0 #0000;
-  --tw-shadow-colored: 0 0 #0000;
-  --tw-blur:  ;
-  --tw-brightness:  ;
-  --tw-contrast:  ;
-  --tw-grayscale:  ;
-  --tw-hue-rotate:  ;
-  --tw-invert:  ;
-  --tw-saturate:  ;
-  --tw-sepia:  ;
-  --tw-drop-shadow:  ;
-  --tw-backdrop-blur:  ;
-  --tw-backdrop-brightness:  ;
-  --tw-backdrop-contrast:  ;
-  --tw-backdrop-grayscale:  ;
-  --tw-backdrop-hue-rotate:  ;
-  --tw-backdrop-invert:  ;
-  --tw-backdrop-opacity:  ;
-  --tw-backdrop-saturate:  ;
-  --tw-backdrop-sepia:  ;
-  --tw-contain-size:  ;
-  --tw-contain-layout:  ;
-  --tw-contain-paint:  ;
-  --tw-contain-style:  ;
-}
-
-/*
-! tailwindcss v3.4.19 | MIT License | https://tailwindcss.com
-*/
-
-/*
-1. Prevent padding and border from affecting element width. (https://github.com/mozdevs/cssremedy/issues/4)
-2. Allow adding a border to an element by just adding a border-width. (https://github.com/tailwindcss/tailwindcss/pull/116)
-*/
-
-*,
-::before,
-::after {
   box-sizing: border-box;
-  /* 1 */
   border-width: 0;
-  /* 2 */
   border-style: solid;
-  /* 2 */
   border-color: #e5e7eb;
-  /* 2 */
 }
 
-::before,
-::after {
-  --tw-content: '';
-}
-
-/*
-1. Use a consistent sensible line-height in all browsers.
-2. Prevent adjustments of font size after orientation changes in iOS.
-3. Use a more readable tab size.
-4. Use the user's configured `sans` font-family by default.
-5. Use the user's configured `sans` font-feature-settings by default.
-6. Use the user's configured `sans` font-variation-settings by default.
-7. Disable tap highlights on iOS
-*/
-
-html,
-:host {
+html, :host {
   line-height: 1.5;
-  /* 1 */
-  -webkit-text-size-adjust: 100%;
-  /* 2 */
-  -moz-tab-size: 4;
-  /* 3 */
-  -o-tab-size: 4;
-     tab-size: 4;
-  /* 3 */
   font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  /* 4 */
-  font-feature-settings: normal;
-  /* 5 */
-  font-variation-settings: normal;
-  /* 6 */
-  -webkit-tap-highlight-color: transparent;
-  /* 7 */
 }
-
-/*
-1. Remove the margin in all browsers.
-2. Inherit line-height from `html` so users can set them as a class directly on the `html` element.
-*/
 
 body {
   margin: 0;
-  /* 1 */
-  line-height: inherit;
-  /* 2 */
-}
-
-/*
-1. Add the correct height in Firefox.
-2. Correct the inheritance of border color in Firefox. (https://bugzilla.mozilla.org/show_bug.cgi?id=190655)
-3. Ensure horizontal rules are visible by default.
-*/
-
-hr {
-  height: 0;
-  /* 1 */
-  color: inherit;
-  /* 2 */
-  border-top-width: 1px;
-  /* 3 */
-}
-
-/*
-Add the correct text decoration in Chrome, Edge, and Safari.
-*/
-
-abbr:where([title]) {
-  -webkit-text-decoration: underline dotted;
-          text-decoration: underline dotted;
-}
-
-/*
-Remove the default font size and weight for headings.
-*/
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-size: inherit;
-  font-weight: inherit;
-}
-
-/*
-Reset links to optimize for opt-in styling instead of opt-out.
-*/
-
-a {
-  color: inherit;
-  text-decoration: inherit;
-}
-
-/*
-Add the correct font weight in Edge and Safari.
-*/
-
-b,
-strong {
-  font-weight: bolder;
-}
-
-/*
-1. Use the user's configured `mono` font-family by default.
-2. Use the user's configured `mono` font-feature-settings by default.
-3. Use the user's configured `mono` font-variation-settings by default.
-4. Correct the odd `em` font sizing in all browsers.
-*/
-
-code,
-kbd,
-samp,
-pre {
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-  /* 1 */
-  font-feature-settings: normal;
-  /* 2 */
-  font-variation-settings: normal;
-  /* 3 */
-  font-size: 1em;
-  /* 4 */
-}
-
-/*
-Add the correct font size in all browsers.
-*/
-
-small {
-  font-size: 80%;
-}
-
-/*
-Prevent `sub` and `sup` elements from affecting the line height in all browsers.
-*/
-
-sub,
-sup {
-  font-size: 75%;
-  line-height: 0;
-  position: relative;
-  vertical-align: baseline;
-}
-
-sub {
-  bottom: -0.25em;
-}
-
-sup {
-  top: -0.5em;
-}
-
-/*
-1. Remove text indentation from table contents in Chrome and Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=999088, https://bugs.webkit.org/show_bug.cgi?id=201297)
-2. Correct table border color inheritance in all Chrome and Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=935729, https://bugs.webkit.org/show_bug.cgi?id=195016)
-3. Remove gaps between table borders by default.
-*/
-
-table {
-  text-indent: 0;
-  /* 1 */
-  border-color: inherit;
-  /* 2 */
-  border-collapse: collapse;
-  /* 3 */
-}
-
-/*
-1. Change the font styles in all browsers.
-2. Remove the margin in Firefox and Safari.
-3. Remove default padding in all browsers.
-*/
-
-button,
-input,
-optgroup,
-select,
-textarea {
-  font-family: inherit;
-  /* 1 */
-  font-feature-settings: inherit;
-  /* 1 */
-  font-variation-settings: inherit;
-  /* 1 */
-  font-size: 100%;
-  /* 1 */
-  font-weight: inherit;
-  /* 1 */
-  line-height: inherit;
-  /* 1 */
-  letter-spacing: inherit;
-  /* 1 */
-  color: inherit;
-  /* 1 */
-  margin: 0;
-  /* 2 */
-  padding: 0;
-  /* 3 */
-}
-
-/*
-Remove the inheritance of text transform in Edge and Firefox.
-*/
-
-button,
-select {
-  text-transform: none;
-}
-
-/*
-1. Correct the inability to style clickable types in iOS and Safari.
-2. Remove default button styles.
-*/
-
-button,
-input:where([type='button']),
-input:where([type='reset']),
-input:where([type='submit']) {
-  -webkit-appearance: button;
-  /* 1 */
-  background-color: transparent;
-  /* 2 */
-  background-image: none;
-  /* 2 */
-}
-
-/*
-Use the modern Firefox focus style for all focusable elements.
-*/
-
-:-moz-focusring {
-  outline: auto;
-}
-
-/*
-Remove the additional `:invalid` styles in Firefox. (https://github.com/mozilla/gecko-dev/blob/2f9eacd9d3d995c937b4251a5557d95d494c9be1/layout/style/res/forms.css#L728-L737)
-*/
-
-:-moz-ui-invalid {
-  box-shadow: none;
-}
-
-/*
-Add the correct vertical alignment in Chrome and Firefox.
-*/
-
-progress {
-  vertical-align: baseline;
-}
-
-/*
-Correct the cursor style of increment and decrement buttons in Safari.
-*/
-
-::-webkit-inner-spin-button,
-::-webkit-outer-spin-button {
-  height: auto;
-}
-
-/*
-1. Correct the odd appearance in Chrome and Safari.
-2. Correct the outline style in Safari.
-*/
-
-[type='search'] {
-  -webkit-appearance: textfield;
-  /* 1 */
-  outline-offset: -2px;
-  /* 2 */
-}
-
-/*
-Remove the inner padding in Chrome and Safari on macOS.
-*/
-
-::-webkit-search-decoration {
-  -webkit-appearance: none;
-}
-
-/*
-1. Correct the inability to style clickable types in iOS and Safari.
-2. Change font properties to `inherit` in Safari.
-*/
-
-::-webkit-file-upload-button {
-  -webkit-appearance: button;
-  /* 1 */
-  font: inherit;
-  /* 2 */
-}
-
-/*
-Add the correct display in Chrome and Safari.
-*/
-
-summary {
-  display: list-item;
-}
-
-/*
-Removes the default spacing and border for appropriate elements.
-*/
-
-blockquote,
-dl,
-dd,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-hr,
-figure,
-p,
-pre {
-  margin: 0;
-}
-
-fieldset {
-  margin: 0;
-  padding: 0;
-}
-
-legend {
-  padding: 0;
-}
-
-ol,
-ul,
-menu {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-/*
-Reset default styling for dialogs.
-*/
-
-dialog {
-  padding: 0;
-}
-
-/*
-Prevent resizing textareas horizontally by default.
-*/
-
-textarea {
-  resize: vertical;
-}
-
-/*
-1. Reset the default placeholder opacity in Firefox. (https://github.com/tailwindlabs/tailwindcss/issues/3300)
-2. Set the default placeholder color to the user's configured gray 400 color.
-*/
-
-input::-moz-placeholder, textarea::-moz-placeholder {
-  opacity: 1;
-  /* 1 */
-  color: #9ca3af;
-  /* 2 */
-}
-
-input::placeholder,
-textarea::placeholder {
-  opacity: 1;
-  /* 1 */
-  color: #9ca3af;
-  /* 2 */
-}
-
-/*
-Set the default cursor for buttons.
-*/
-
-button,
-[role="button"] {
-  cursor: pointer;
-}
-
-/*
-Make sure disabled buttons don't get the pointer cursor.
-*/
-
-:disabled {
-  cursor: default;
-}
-
-/*
-1. Make replaced elements `display: block` by default. (https://github.com/mozdevs/cssremedy/issues/14)
-2. Add `vertical-align: middle` to align replaced elements more sensibly by default. (https://github.com/jensimmons/cssremedy/issues/14#issuecomment-634934210)
-   This can trigger a poorly considered lint error in some tools but is included by design.
-*/
-
-img,
-svg,
-video,
-canvas,
-audio,
-iframe,
-embed,
-object {
-  display: block;
-  /* 1 */
-  vertical-align: middle;
-  /* 2 */
-}
-
-/*
-Constrain images and videos to the parent width and preserve their intrinsic aspect ratio. (https://github.com/mozdevs/cssremedy/issues/14)
-*/
-
-img,
-video {
-  max-width: 100%;
-  height: auto;
-}
-
-/* Make elements with the HTML hidden attribute stay hidden by default */
-
-[hidden]:where(:not([hidden="until-found"])) {
-  display: none;
-}
-
-.fixed {
-  position: fixed;
-}
-
-.absolute {
-  position: absolute;
-}
-
-.relative {
-  position: relative;
-}
-
-.z-10 {
-  z-index: 10;
-}
-
-.my-1 {
-  margin-top: 0.25rem;
-  margin-bottom: 0.25rem;
-}
-
-.my-3 {
-  margin-top: 0.75rem;
-  margin-bottom: 0.75rem;
-}
-
-.mb-6 {
-  margin-bottom: 1.5rem;
-}
-
-.ml-1 {
-  margin-left: 0.25rem;
-}
-
-.mt-1 {
-  margin-top: 0.25rem;
-}
-
-.mt-4 {
-  margin-top: 1rem;
-}
-
-.mt-auto {
-  margin-top: auto;
-}
-
-.flex {
-  display: flex;
-}
-
-.grid {
-  display: grid;
-}
-
-.hidden {
-  display: none;
-}
-
-.h-1\.5 {
-  height: 0.375rem;
-}
-
-.h-2\.5 {
-  height: 0.625rem;
-}
-
-.h-8 {
-  height: 2rem;
-}
-
-.h-9 {
-  height: 2.25rem;
-}
-
-.h-full {
-  height: 100%;
-}
-
-.min-h-screen {
+  background-color: #050b14;
+  color: #f8fafc;
+  font-family: system-ui, -apple-system, sans-serif;
+  background-image: radial-gradient(circle at 50% 0%, #0f172a 0%, #050b14 70%);
+  background-attachment: fixed;
   min-height: 100vh;
+  padding: 1.5rem;
 }
 
-.w-1 {
-  width: 0.25rem;
+/* ===== Tab System ===== */
+.tab-bar {
+  display: flex;
+  gap: 2px;
+  background-color: #0f172a;
+  border: 1px solid #1e293b;
+  border-radius: 0.5rem 0.5rem 0 0;
+  padding: 0.25rem 0.25rem 0;
+  overflow-x: auto;
 }
 
-.w-1\.5 {
-  width: 0.375rem;
+.tab-btn {
+  padding: 0.625rem 1.25rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #94a3b8;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.2s;
+  font-family: inherit;
 }
 
-.w-2\.5 {
-  width: 0.625rem;
+.tab-btn:hover {
+  color: #cbd5e1;
+  background-color: rgba(30, 41, 59, 0.5);
 }
 
-.w-9 {
-  width: 2.25rem;
+.tab-btn.active {
+  color: #10b981;
+  border-bottom-color: #10b981;
+  background-color: rgba(16, 185, 129, 0.05);
 }
 
-.w-full {
-  width: 100%;
+.tab-content-area {
+  background-color: #0f172a;
+  border: 1px solid #1e293b;
+  border-top: none;
+  border-radius: 0 0 0.5rem 0.5rem;
+  padding: 1.25rem;
+  min-height: 70vh;
 }
 
-.max-w-\[90rem\] {
-  max-width: 90rem;
-}
+.tab-panel { display: none; }
+.tab-panel.active { display: block; }
 
-.flex-shrink {
-  flex-shrink: 1;
-}
-
-.flex-shrink-0 {
-  flex-shrink: 0;
-}
-
-.flex-grow {
-  flex-grow: 1;
-}
-
-.transform {
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
-@keyframes pulse {
-  50% {
-    opacity: .5;
-  }
-}
-
-.animate-pulse {
-  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-}
-
-.grid-cols-1 {
-  grid-template-columns: repeat(1, minmax(0, 1fr));
-}
-
-.grid-cols-2 {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-}
-
-.flex-col {
-  flex-direction: column;
-}
-
-.items-end {
-  align-items: flex-end;
-}
-
-.items-center {
+/* ===== Header ===== */
+.screen-header {
+  display: flex;
   align-items: center;
-}
-
-.items-baseline {
-  align-items: baseline;
-}
-
-.justify-center {
-  justify-content: center;
-}
-
-.justify-between {
   justify-content: space-between;
+  margin-bottom: 1rem;
 }
 
-.gap-1 {
-  gap: 0.25rem;
-}
-
-.gap-1\.5 {
-  gap: 0.375rem;
-}
-
-.gap-2 {
-  gap: 0.5rem;
-}
-
-.gap-3 {
+.asset-title {
+  display: flex;
+  align-items: center;
   gap: 0.75rem;
 }
 
-.gap-4 {
-  gap: 1rem;
-}
-
-.gap-6 {
-  gap: 1.5rem;
-}
-
-.rounded-full {
-  border-radius: 9999px;
-}
-
-.rounded-lg {
-  border-radius: 0.5rem;
-}
-
-.border {
-  border-width: 1px;
-}
-
-.border-t {
-  border-top-width: 1px;
-}
-
-.border-emerald-500\/20 {
-  border-color: rgb(16 185 129 / 0.2);
-}
-
-.border-gray-400 {
-  --tw-border-opacity: 1;
-  border-color: rgb(156 163 175 / var(--tw-border-opacity, 1));
-}
-
-.border-slate-600 {
-  --tw-border-opacity: 1;
-  border-color: rgb(71 85 105 / var(--tw-border-opacity, 1));
-}
-
-.border-slate-800 {
-  --tw-border-opacity: 1;
-  border-color: rgb(30 41 59 / var(--tw-border-opacity, 1));
-}
-
-.bg-\[\#0f172a\] {
-  --tw-bg-opacity: 1;
-  background-color: rgb(15 23 42 / var(--tw-bg-opacity, 1));
-}
-
-.bg-amber-500\/10 {
-  background-color: rgb(245 158 11 / 0.1);
-}
-
-.bg-blue-500\/10 {
-  background-color: rgb(59 130 246 / 0.1);
-}
-
-.bg-emerald-500 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(16 185 129 / var(--tw-bg-opacity, 1));
-}
-
-.bg-emerald-500\/10 {
-  background-color: rgb(16 185 129 / 0.1);
-}
-
-.bg-orange-500\/10 {
-  background-color: rgb(249 115 22 / 0.1);
-}
-
-.bg-red-500\/10 {
-  background-color: rgb(239 68 68 / 0.1);
-}
-
-.bg-slate-500\/10 {
-  background-color: rgb(100 116 139 / 0.1);
-}
-
-.bg-slate-600 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(71 85 105 / var(--tw-bg-opacity, 1));
-}
-
-.bg-slate-800 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(30 41 59 / var(--tw-bg-opacity, 1));
-}
-
-.p-4 {
-  padding: 1rem;
-}
-
-.p-5 {
-  padding: 1.25rem;
-}
-
-.px-1 {
-  padding-left: 0.25rem;
-  padding-right: 0.25rem;
-}
-
-.px-2 {
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
-}
-
-.px-4 {
-  padding-left: 1rem;
-  padding-right: 1rem;
-}
-
-.py-0\.5 {
-  padding-top: 0.125rem;
-  padding-bottom: 0.125rem;
-}
-
-.py-1\.5 {
-  padding-top: 0.375rem;
-  padding-bottom: 0.375rem;
-}
-
-.text-3xl {
-  font-size: 1.875rem;
-  line-height: 2.25rem;
-}
-
-.text-base {
-  font-size: 1rem;
-  line-height: 1.5rem;
-}
-
-.text-lg {
-  font-size: 1.125rem;
-  line-height: 1.75rem;
-}
-
-.text-sm {
-  font-size: 0.875rem;
-  line-height: 1.25rem;
-}
-
-.text-xl {
+.asset-title h1 {
   font-size: 1.25rem;
-  line-height: 1.75rem;
-}
-
-.text-xs {
-  font-size: 0.75rem;
-  line-height: 1rem;
-}
-
-.font-bold {
   font-weight: 700;
+  color: #f8fafc;
+  margin: 0;
 }
 
-.font-medium {
-  font-weight: 500;
+.status-badge {
+  padding: 0.25rem 0.75rem;
+  background-color: rgba(16, 185, 129, 0.1);
+  color: #34d399;
+  font-size: 0.75rem;
+  font-weight: 700;
+  border-radius: 9999px;
+  border: 1px solid rgba(16, 185, 129, 0.2);
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
 }
 
-.font-semibold {
+.status-dot {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background-color: #10b981;
+}
+
+/* ===== Metric Cards (from Rev 1) ===== */
+.metric-card {
+  background-color: #0a1628;
+  border: 1px solid #1e293b;
+  border-radius: 0.5rem;
+  padding: 0.875rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  transition: border-color 0.2s;
+}
+
+.metric-card:hover {
+  border-color: #334155;
+}
+
+.icon-box {
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.metric-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 0;
+}
+
+.metric-label {
+  font-size: 0.75rem;
+  color: #94a3b8;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 0.125rem;
+}
+
+.metric-value {
+  font-size: 1.125rem;
   font-weight: 600;
+  color: #f8fafc;
+  display: flex;
+  align-items: baseline;
+  gap: 0.25rem;
+  line-height: 1.2;
 }
 
-.text-amber-400 {
-  --tw-text-opacity: 1;
-  color: rgb(251 191 36 / var(--tw-text-opacity, 1));
+.metric-unit {
+  font-size: 0.75rem;
+  color: #64748b;
+  font-weight: 400;
 }
 
-.text-blue-400 {
-  --tw-text-opacity: 1;
-  color: rgb(96 165 250 / var(--tw-text-opacity, 1));
+/* ===== Grid Layouts ===== */
+.grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.75rem; }
+.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.75rem; }
+.grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.75rem; }
+
+/* ===== Section Headers ===== */
+.section-title {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin: 1.25rem 0 0.625rem 0;
 }
 
-.text-emerald-400 {
-  --tw-text-opacity: 1;
-  color: rgb(52 211 153 / var(--tw-text-opacity, 1));
+.section-title:first-child {
+  margin-top: 0;
 }
 
-.text-emerald-500 {
-  --tw-text-opacity: 1;
-  color: rgb(16 185 129 / var(--tw-text-opacity, 1));
+/* ===== Setpoint / Power Cards (from Rev 1) ===== */
+.setpoint-card {
+  background-color: #0a1628;
+  border: 1px solid #1e293b;
+  border-radius: 0.5rem;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
 }
 
-.text-gray-500 {
-  --tw-text-opacity: 1;
-  color: rgb(107 114 128 / var(--tw-text-opacity, 1));
+/* ===== Buttons (from Rev 1) ===== */
+.btn-control {
+  background-color: #1e293b;
+  color: #cbd5e1;
+  border: 1px solid #334155;
+  padding: 0.5rem 1rem;
+  border-radius: 0.375rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: all 0.2s;
+  cursor: pointer;
+  font-family: inherit;
 }
 
-.text-orange-400 {
-  --tw-text-opacity: 1;
-  color: rgb(251 146 60 / var(--tw-text-opacity, 1));
+.btn-control:hover {
+  background-color: #334155;
+  color: white;
 }
 
-.text-red-400 {
-  --tw-text-opacity: 1;
-  color: rgb(248 113 113 / var(--tw-text-opacity, 1));
+.btn-primary {
+  background-color: #10b981;
+  color: #022c22;
+  border: 1px solid #059669;
+  box-shadow: 0 0 10px rgba(16, 185, 129, 0.2);
 }
 
-.text-slate-300 {
-  --tw-text-opacity: 1;
-  color: rgb(203 213 225 / var(--tw-text-opacity, 1));
+.btn-primary:hover {
+  background-color: #059669;
+  color: white;
 }
 
-.text-slate-400 {
-  --tw-text-opacity: 1;
-  color: rgb(148 163 184 / var(--tw-text-opacity, 1));
+/* ===== GCB Status ===== */
+.gcb-status {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background-color: #0a1628;
+  border: 1px solid #1e293b;
+  border-radius: 0.5rem;
+  padding: 1rem 1.25rem;
 }
 
-.text-slate-500 {
-  --tw-text-opacity: 1;
-  color: rgb(100 116 139 / var(--tw-text-opacity, 1));
+.gcb-indicator {
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.75rem;
 }
 
-.text-white {
-  --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity, 1));
+/* ===== Command Bar ===== */
+.command-bar {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  align-items: center;
 }
 
-.shadow-sm {
-  --tw-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-  --tw-shadow-colored: 0 1px 2px 0 var(--tw-shadow-color);
-  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+.command-bar .btn-control {
+  flex: none;
 }
 
-.drop-shadow {
-  --tw-drop-shadow: drop-shadow(0 1px 2px rgb(0 0 0 / 0.1)) drop-shadow(0 1px 1px rgb(0 0 0 / 0.06));
-  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+/* ===== Priority Selector ===== */
+.priority-selector {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: #1e293b;
+  border: 1px solid #334155;
+  border-radius: 0.375rem;
+  padding: 0.375rem 0.75rem;
+  font-size: 0.875rem;
+  color: #cbd5e1;
 }
 
-.drop-shadow-\[0_0_2px_rgba\(16\2c 185\2c 129\2c 0\.8\)\] {
-  --tw-drop-shadow: drop-shadow(0 0 2px rgba(16,185,129,0.8));
-  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+.priority-selector select {
+  background-color: #0f172a;
+  color: #f8fafc;
+  border: 1px solid #334155;
+  border-radius: 0.25rem;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.875rem;
+  font-family: inherit;
 }
 
-.drop-shadow-\[0_0_8px_rgba\(16\2c 185\2c 129\2c 0\.5\)\] {
-  --tw-drop-shadow: drop-shadow(0 0 8px rgba(16,185,129,0.5));
-  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+/* ===== Operator Panel (from Rev 1) ===== */
+.operator-panel {
+  background: linear-gradient(to bottom, #9ca3af, #d1d5db);
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  width: 100%;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  border: 1px solid #6b7280;
+  display: flex;
+  flex-direction: column;
 }
 
-.filter {
-  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+.panel-header {
+  background: linear-gradient(to bottom, #6b7280, #4b5563);
+  color: white;
+  padding: 0.25rem 0.75rem;
+  font-weight: 600;
+  font-size: 0.875rem;
+  border-top-left-radius: 0.375rem;
+  border-top-right-radius: 0.375rem;
+  margin: -0.5rem -0.5rem 0.5rem -0.5rem;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-.transition {
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
+.panel-content {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  justify-content: space-between;
+  flex-grow: 1;
 }
 
-@media (min-width: 768px) {
-  .md\:grid-cols-4 {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-  }
-
-  .md\:p-6 {
-    padding: 1.5rem;
-  }
+.control-column {
+  background-color: #d1d5db;
+  border: 1px solid #9ca3af;
+  border-radius: 0.25rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  height: 100%;
+  box-shadow: inset 0 1px 3px rgba(255,255,255,0.5);
 }
 
-@media (min-width: 1024px) {
-  .lg\:col-span-2 {
-    grid-column: span 2 / span 2;
-  }
-
-  .lg\:w-72 {
-    width: 18rem;
-  }
-
-  .lg\:grid-cols-4 {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-  }
-
-  .lg\:flex-row {
-    flex-direction: row;
-  }
-
-  .lg\:p-8 {
-    padding: 2rem;
-  }
+.column-header {
+  color: #6b7280;
+  font-weight: 600;
+  font-size: 0.75rem;
+  padding: 0.25rem 0.5rem;
 }
 
-    body {
-      background-color: #050b14;
-      color: #f8fafc;
-      font-family: system-ui, -apple-system, sans-serif;
-      background-image: radial-gradient(circle at 50% 0%, #0f172a 0%, #050b14 70%);
-      background-attachment: fixed;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-      margin: 0;
-    }
-    
-    .gen-circle {
-      width: 110px;
-      height: 110px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-      background: radial-gradient(circle, rgba(16, 185, 129, 0.15) 0%, transparent 70%);
-      border: 2px solid #10b981;
-      box-shadow: 0 0 25px rgba(16, 185, 129, 0.2);
-      color: #10b981;
-    }
+.btn-v3 {
+  background: linear-gradient(to bottom, #f3f4f6, #d1d5db);
+  border: 1px solid #9ca3af;
+  border-top-color: #e5e7eb;
+  color: #374151;
+  font-weight: 500;
+  font-size: 0.875rem;
+  padding: 0.5rem;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.1s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+  font-family: inherit;
+}
 
-    /* Dense Metric Cards */
-    .metric-card {
-      background-color: #0f172a;
-      border: 1px solid #1e293b;
-      border-radius: 0.5rem;
-      padding: 0.875rem 1rem;
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      transition: border-color 0.2s;
-    }
-    
-    .metric-card:hover {
-      border-color: #334155;
-    }
+.btn-v3:hover {
+  background: linear-gradient(to bottom, #e5e7eb, #9ca3af);
+}
 
-    .icon-box {
-      width: 2.75rem;
-      height: 2.75rem;
-      border-radius: 0.5rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-    }
+.btn-v3.active-blue {
+  background: linear-gradient(to bottom, #60a5fa, #3b82f6);
+  color: white;
+  border-color: #2563eb;
+  border-top-color: #93c5fd;
+  text-shadow: 0 1px 1px rgba(0,0,0,0.2);
+}
 
-    .metric-content {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      min-width: 0;
-    }
+.btn-v3.active-green {
+  background: linear-gradient(to bottom, #34d399, #10b981);
+  color: white;
+  border-color: #059669;
+  border-top-color: #6ee7b7;
+  text-shadow: 0 1px 1px rgba(0,0,0,0.2);
+}
 
-    .metric-label {
-      font-size: 0.75rem;
-      color: #94a3b8;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      margin-bottom: 0.125rem;
-    }
+.middle-controls {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2px;
+  position: relative;
+  height: 100%;
+}
 
-    .metric-value {
-      font-size: 1.125rem;
-      font-weight: 600;
-      color: #f8fafc;
-      display: flex;
-      align-items: baseline;
-      gap: 0.25rem;
-      line-height: 1.2;
-    }
+.btn-action {
+  background: linear-gradient(to bottom, #d1d5db, #9ca3af);
+  border: 1px solid #6b7280;
+  color: white;
+  text-shadow: 0 1px 1px rgba(0,0,0,0.3);
+  border-radius: 0.125rem;
+  padding: 0.5rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  width: 70px;
+  height: 48px;
+  text-align: center;
+  position: relative;
+  z-index: 10;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  font-family: inherit;
+}
 
-    .metric-unit {
-      font-size: 0.75rem;
-      color: #64748b;
-      font-weight: 400;
-    }
+.lock-icon-container {
+  background: linear-gradient(to bottom, #e5e7eb, #d1d5db);
+  border-top: 1px solid #9ca3af;
+  padding: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom-left-radius: 0.25rem;
+  border-bottom-right-radius: 0.25rem;
+  margin-top: auto;
+}
 
-    /* Buttons */
-    .btn-control {
-      background-color: #1e293b;
-      color: #cbd5e1;
-      border: 1px solid #334155;
-      padding: 0.5rem 1rem;
-      border-radius: 0.375rem;
-      font-size: 0.875rem;
-      font-weight: 500;
-      transition: all 0.2s;
-      width: 100%;
-    }
-    .btn-control:hover {
-      background-color: #334155;
-      color: white;
-    }
-    
-    .btn-primary {
-      background-color: #10b981;
-      color: #022c22;
-      border: 1px solid #059669;
-      box-shadow: 0 0 10px rgba(16, 185, 129, 0.2);
-    }
-    .btn-primary:hover {
-      background-color: #059669;
-      color: white;
-    }
+.lock-icon {
+  color: #b45309;
+  font-size: 1rem;
+  filter: drop-shadow(0 1px 1px rgba(255,255,255,0.8));
+}
 
-    /* Setpoint Cards */
-    .setpoint-card {
-      background-color: #0f172a;
-      border: 1px solid #1e293b;
-      border-radius: 0.5rem;
-      padding: 1.25rem;
-      display: flex;
-      flex-direction: column;
-      gap: 0.75rem;
-      flex: 1; /* allow growing */
-    }
+.radio-wave {
+  position: absolute;
+  color: #9ca3af;
+  font-size: 0.6rem;
+  top: -6px;
+  left: -8px;
+  transform: rotate(-45deg);
+}
 
-    /* V3 Operator Panel Style */
-    .operator-panel {
-      background: linear-gradient(to bottom, #9ca3af, #d1d5db);
-      border-radius: 0.5rem;
-      padding: 0.5rem;
-      width: 100%;
-      height: 100%;
-      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-      border: 1px solid #6b7280;
-      display: flex;
-      flex-direction: column;
-    }
+.connector {
+  position: absolute;
+  width: 10px;
+  height: 3px;
+  background-color: #9ca3af;
+  top: 50%;
+  z-index: 0;
+}
 
-    .panel-header {
-      background: linear-gradient(to bottom, #6b7280, #4b5563);
-      color: white;
-      padding: 0.25rem 0.75rem;
-      font-weight: 600;
-      font-size: 0.875rem;
-      border-top-left-radius: 0.375rem;
-      border-top-right-radius: 0.375rem;
-      margin: -0.5rem -0.5rem 0.5rem -0.5rem;
-      text-shadow: 0 1px 2px rgba(0,0,0,0.5);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
+.connector-left {
+  left: -10px;
+}
 
-    .panel-content {
-      display: flex;
-      gap: 0.5rem;
-      align-items: center;
-      justify-content: space-between;
-      flex-grow: 1;
-    }
+.connector-left::before {
+  content: '';
+  position: absolute;
+  left: -20px;
+  top: -14.5px;
+  border-top: 16px solid transparent;
+  border-bottom: 16px solid transparent;
+  border-right: 24px solid #9ca3af;
+}
 
-    /* Column Styles */
-    .control-column {
-      background-color: #d1d5db;
-      border: 1px solid #9ca3af;
-      border-radius: 0.25rem;
-      display: flex;
-      flex-direction: column;
-      flex: 1;
-      height: 100%;
-      box-shadow: inset 0 1px 3px rgba(255,255,255,0.5);
-    }
+.connector-right {
+  right: -16px;
+}
 
-    .column-header {
-      color: white;
-      font-weight: 600;
-      font-size: 0.75rem;
-      padding: 0.25rem 0.5rem;
-      text-shadow: 0 1px 1px rgba(0,0,0,0.3);
-    }
+.connector-right::after {
+  content: '';
+  position: absolute;
+  right: -2px;
+  top: -3px;
+  border-top: 4px solid transparent;
+  border-bottom: 4px solid transparent;
+  border-left: 6px solid #9ca3af;
+}
 
-    /* Button Styles */
-    .btn-v3 {
-      background: linear-gradient(to bottom, #f3f4f6, #d1d5db);
-      border: 1px solid #9ca3af;
-      border-top-color: #e5e7eb;
-      color: #374151;
-      font-weight: 500;
-      font-size: 0.875rem;
-      padding: 0.5rem;
-      text-align: center;
-      cursor: pointer;
-      transition: all 0.1s;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-grow: 1;
-    }
+/* ===== Overview Layout ===== */
+.overview-layout {
+  display: flex;
+  gap: 1.25rem;
+}
 
-    .btn-v3:hover {
-      background: linear-gradient(to bottom, #e5e7eb, #9ca3af);
-    }
+.overview-main {
+  flex: 1;
+  min-width: 0;
+}
 
-    .btn-v3:active {
-      background: #9ca3af;
-      box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
-      border-top-color: #6b7280;
-    }
+.overview-sidebar {
+  width: 16rem;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
 
-    .btn-v3.active-blue {
-      background: linear-gradient(to bottom, #60a5fa, #3b82f6);
-      color: white;
-      border-color: #2563eb;
-      border-top-color: #93c5fd;
-      text-shadow: 0 1px 1px rgba(0,0,0,0.2);
-    }
+/* ===== Placeholder for future tabs ===== */
+.placeholder-msg {
+  color: #64748b;
+  font-size: 0.875rem;
+  padding: 2rem;
+  text-align: center;
+}
 
-    .btn-v3.active-blue:hover {
-      background: linear-gradient(to bottom, #3b82f6, #2563eb);
-    }
-
-    .btn-v3.active-green {
-      background: linear-gradient(to bottom, #34d399, #10b981);
-      color: white;
-      border-color: #059669;
-      border-top-color: #6ee7b7;
-      text-shadow: 0 1px 1px rgba(0,0,0,0.2);
-    }
-
-    /* Middle section (Start/Stop) */
-    .middle-controls {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      gap: 2px;
-      position: relative;
-      height: 100%;
-    }
-
-    .btn-action {
-      background: linear-gradient(to bottom, #d1d5db, #9ca3af);
-      border: 1px solid #6b7280;
-      color: white;
-      text-shadow: 0 1px 1px rgba(0,0,0,0.3);
-      border-radius: 0.125rem;
-      padding: 0.5rem;
-      font-size: 0.8rem;
-      font-weight: 600;
-      cursor: pointer;
-      transition: all 0.2s;
-      width: 70px;
-      height: 48px;
-      text-align: center;
-      position: relative;
-      z-index: 10;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-    }
-
-    .btn-action:hover {
-      background: linear-gradient(to bottom, #e5e7eb, #9ca3af);
-    }
-    
-    .btn-action:active {
-      background: #9ca3af;
-      box-shadow: inset 0 2px 4px rgba(0,0,0,0.2);
-    }
-
-    /* Connector Arrows */
-    .connector {
-      position: absolute;
-      width: 10px;
-      height: 3px;
-      background-color: #9ca3af;
-      top: 50%;
-      z-index: 0;
-    }
-
-    .connector-left {
-      left: -10px; /* Stretch into the margin space */
-    }
-    
-    .connector-left::before {
-      content: '';
-      position: absolute;
-      left: -20px; /* The pointy triangle bit */
-      top: -14.5px;
-      border-top: 16px solid transparent;
-      border-bottom: 16px solid transparent;
-      border-right: 24px solid #9ca3af;
-    }
-
-    .connector-right {
-      right: -16px;
-    }
-
-    .connector-right::after {
-      content: '';
-      position: absolute;
-      right: -2px;
-      top: -3px;
-      border-top: 4px solid transparent;
-      border-bottom: 4px solid transparent;
-      border-left: 6px solid #9ca3af;
-    }
-
-    /* Lock Icon */
-    .lock-icon-container {
-      background: linear-gradient(to bottom, #e5e7eb, #d1d5db);
-      border-top: 1px solid #9ca3af;
-      padding: 0.5rem;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      border-bottom-left-radius: 0.25rem;
-      border-bottom-right-radius: 0.25rem;
-      margin-top: auto;
-    }
-
-    .lock-icon {
-      color: #b45309;
-      font-size: 1rem;
-      filter: drop-shadow(0 1px 1px rgba(255,255,255,0.8));
-    }
-    
-    .radio-wave {
-      position: absolute;
-      color: #9ca3af;
-      font-size: 0.6rem;
-      top: -6px;
-      left: -8px;
-      transform: rotate(-45deg);
-    }
-  
         </style>
       </head>
-      <body class="min-h-screen p-4 md:p-6 lg:p-8 flex justify-center items-center w-full">
+      <body>
 
-  <div class="max-w-[90rem] w-full flex flex-col lg:flex-row gap-6 justify-center">
-    
-    <!-- Left Column: Generator Visual (Compact Sidebar) -->
-    <div class="lg:w-72 flex-shrink-0 flex flex-col gap-6">
-      
-      <!-- Visualization Card -->
-      <div class="bg-[#0f172a] border border-slate-800 rounded-lg p-5 flex flex-col items-center h-full">
-        <!-- Connection Pipe & Breaker -->
-        <div class="w-1 h-8 bg-slate-600"></div>
-        <div class="flex items-center justify-center text-emerald-500 drop-shadow-[0_0_8px_rgba(16,185,129,0.5)] my-1">
-          <svg width="48" height="60" viewBox="0 0 32 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <line x1="16" y1="0" x2="16" y2="4" stroke="currentColor" stroke-width="2" />
-            <circle cx="16" cy="7" r="3" stroke="currentColor" stroke-width="2" />
-            <circle cx="16" cy="33" r="3" stroke="currentColor" stroke-width="2" />
-            <line x1="16" y1="36" x2="16" y2="40" stroke="currentColor" stroke-width="2" />
-            <path d="M 14.5 9.5 Q -1 20 14.5 30.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
-            <line x1="0" y1="20" x2="7" y2="20" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
-          </svg>
-        </div>
-        <div class="w-1 h-8 bg-slate-600"></div>
-        
-        <!-- Generator Circle -->
-        <div class="gen-circle my-3">
-          <span class="relative z-10 flex items-center justify-center">
-            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="20" viewBox="0 0 40 20" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M 4 10 Q 12 -2 20 10 T 36 10"></path>
-            </svg>
-          </span>
-        </div>
-        
-        <!-- Status Indicator -->
-        <div class="mt-4 mb-6 px-4 py-1.5 bg-emerald-500/10 text-emerald-400 text-base font-bold rounded-full border border-emerald-500/20 flex items-center gap-2">
-          <div class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></div>
-          G5
-        </div>
-
-        <!-- Controls -->
-        <div class="w-full flex flex-col gap-2 mt-auto">
-          <button class="btn-control btn-primary">Start</button>
-          <button class="btn-control">Stop</button>
-          <button class="btn-control">Automatic</button>
-          <button class="btn-control">Alarm Reset</button>
-        </div>
+  <!-- Screen Header -->
+  <div class="screen-header">
+    <div class="asset-title">
+      <h1>MV Genset — G5</h1>
+      <div class="status-badge">
+        <div class="status-dot"></div>
+        Running
       </div>
-    </div>
-
-    <!-- Right Column: Dense Grid -->
-    <div class="flex-grow flex flex-col gap-4">
-      
-      <!-- Metrics Grid (Top 12 items) -->
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
-        
-        <!-- Operating Hours -->
-        <div class="metric-card">
-          <div class="icon-box bg-emerald-500/10 text-emerald-400">
-            <i class="fa-solid fa-clock text-xl"></i>
-          </div>
-          <div class="metric-content">
-            <div class="metric-label">Operating Hours</div>
-            <div class="metric-value">1,110 <span class="metric-unit">h</span></div>
-          </div>
-        </div>
-
-        <!-- Speed -->
-        <div class="metric-card">
-          <div class="icon-box bg-blue-500/10 text-blue-400">
-            <i class="fa-solid fa-bolt text-xl"></i>
-          </div>
-          <div class="metric-content">
-            <div class="metric-label">Speed</div>
-            <div class="metric-value">1,505 <span class="metric-unit">rpm</span></div>
-          </div>
-        </div>
-
-        <!-- Chamber Pressure -->
-        <div class="metric-card">
-          <div class="icon-box bg-blue-500/10 text-blue-400">
-            <i class="fa-solid fa-cloud text-xl"></i>
-          </div>
-          <div class="metric-content">
-            <div class="metric-label">Chamber Pressure</div>
-            <div class="metric-value">107.46 <span class="metric-unit">psi</span></div>
-          </div>
-        </div>
-
-        <!-- Oil Pressure -->
-        <div class="metric-card">
-          <div class="icon-box bg-amber-500/10 text-amber-400">
-            <i class="fa-solid fa-flask text-xl"></i>
-          </div>
-          <div class="metric-content">
-            <div class="metric-label">Oil Pressure</div>
-            <div class="metric-value">59.25 <span class="metric-unit">psi</span></div>
-          </div>
-        </div>
-
-        <!-- Jacket Pressure -->
-        <div class="metric-card">
-          <div class="icon-box bg-blue-500/10 text-blue-400">
-            <i class="fa-solid fa-flask text-xl"></i>
-          </div>
-          <div class="metric-content">
-            <div class="metric-label">Jacket Pressure</div>
-            <div class="metric-value">37.43 <span class="metric-unit">psi</span></div>
-          </div>
-        </div>
-
-        <!-- Oil Temperature -->
-        <div class="metric-card">
-          <div class="icon-box bg-orange-500/10 text-orange-400">
-            <i class="fa-solid fa-temperature-half text-xl"></i>
-          </div>
-          <div class="metric-content">
-            <div class="metric-label">Oil Temperature</div>
-            <div class="metric-value">66.7 <span class="metric-unit">°C</span></div>
-          </div>
-        </div>
-
-        <!-- Jacket Temperature -->
-        <div class="metric-card">
-          <div class="icon-box bg-orange-500/10 text-orange-400">
-            <i class="fa-solid fa-temperature-half text-xl"></i>
-          </div>
-          <div class="metric-content">
-            <div class="metric-label">Jacket Temperature</div>
-            <div class="metric-value">74.0 <span class="metric-unit">°C</span></div>
-          </div>
-        </div>
-
-        <!-- Return Temperature -->
-        <div class="metric-card">
-          <div class="icon-box bg-orange-500/10 text-orange-400">
-            <i class="fa-solid fa-temperature-half text-xl"></i>
-          </div>
-          <div class="metric-content">
-            <div class="metric-label">Return Temperature</div>
-            <div class="metric-value">64.9 <span class="metric-unit">°C</span></div>
-          </div>
-        </div>
-
-        <!-- T after TC -->
-        <div class="metric-card">
-          <div class="icon-box bg-red-500/10 text-red-400">
-            <i class="fa-solid fa-temperature-half text-xl"></i>
-          </div>
-          <div class="metric-content">
-            <div class="metric-label">T after TC</div>
-            <div class="metric-value">472 <span class="metric-unit">°C</span></div>
-          </div>
-        </div>
-
-        <!-- T SCR inlet -->
-        <div class="metric-card">
-          <div class="icon-box bg-red-500/10 text-red-400">
-            <i class="fa-solid fa-temperature-half text-xl"></i>
-          </div>
-          <div class="metric-content">
-            <div class="metric-label">T SCR inlet</div>
-            <div class="metric-value">436 <span class="metric-unit">°C</span></div>
-          </div>
-        </div>
-
-        <!-- NO clean -->
-        <div class="metric-card">
-          <div class="icon-box bg-slate-500/10 text-slate-300">
-            <i class="fa-solid fa-flask text-xl"></i>
-          </div>
-          <div class="metric-content">
-            <div class="metric-label">NO clean</div>
-            <div class="metric-value">2.7 <span class="metric-unit">ppm</span></div>
-          </div>
-        </div>
-
-        <!-- Urea level -->
-        <div class="metric-card">
-          <div class="icon-box bg-blue-500/10 text-blue-400">
-            <i class="fa-solid fa-flask text-xl"></i>
-          </div>
-          <div class="metric-content">
-            <div class="metric-label">Urea level</div>
-            <div class="metric-value">77 <span class="metric-unit">%</span></div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Bottom Grid (Powers & Operator Panel) -->
-      <div class="grid grid-cols-1 lg:grid-cols-4 gap-3 mt-1" style="height: 100%;">
-        
-        <!-- Column 1: Generator & Reactive Power -->
-        <div class="flex flex-col gap-3 h-full">
-          <!-- Generator Power (Active) -->
-          <div class="setpoint-card">
-            <div class="flex items-center gap-3">
-              <div class="icon-box bg-emerald-500/10 text-emerald-400 h-9 w-9">
-                <i class="fa-solid fa-bolt text-xl"></i>
-              </div>
-              <span class="text-sm text-slate-400 font-medium">Generator Power</span>
-            </div>
-            <div class="flex items-end justify-between px-1 mt-4">
-              <div class="flex items-baseline gap-1">
-                <span class="text-3xl font-bold text-white">1,624</span>
-                <span class="text-sm text-slate-500 font-medium ml-1">kW</span>
-              </div>
-              <div class="text-lg font-semibold text-emerald-400">49.1%</div>
-            </div>
-          </div>
-
-          <!-- Reactive Power (Active) -->
-          <div class="setpoint-card">
-            <div class="flex items-center gap-3">
-              <div class="icon-box bg-blue-500/10 text-blue-400 h-9 w-9">
-                <i class="fa-solid fa-bolt text-xl"></i>
-              </div>
-              <span class="text-sm text-slate-400 font-medium">Reactive Power</span>
-            </div>
-            <div class="flex items-end justify-between px-1 mt-4">
-              <div class="flex items-baseline gap-1">
-                <span class="text-3xl font-bold text-white">40</span>
-                <span class="text-sm text-slate-500 font-medium ml-1">kVAr</span>
-              </div>
-              <div class="text-lg font-semibold text-blue-400">1.1%</div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Column 2: Setpoints -->
-        <div class="flex flex-col gap-3 h-full">
-          <!-- Power Setpoint (No Toggles) -->
-          <div class="setpoint-card">
-            <div class="flex items-center gap-3">
-              <div class="icon-box bg-slate-800 text-slate-300 h-9 w-9">
-                <i class="fa-solid fa-gear text-xl"></i>
-              </div>
-              <span class="text-sm text-slate-400 font-medium">Power Setpoint</span>
-            </div>
-            <div class="flex items-end justify-between px-1 mt-4">
-              <div class="flex items-baseline gap-1">
-                <span class="text-3xl font-bold text-white">1,640</span>
-                <span class="text-sm text-slate-500 font-medium ml-1">kW</span>
-              </div>
-              <div class="text-lg font-semibold text-slate-300">49.6%</div>
-            </div>
-          </div>
-
-          <!-- Reactive Setpoint (No Toggles) -->
-          <div class="setpoint-card">
-            <div class="flex items-center gap-3">
-              <div class="icon-box bg-slate-800 text-slate-300 h-9 w-9">
-                <i class="fa-solid fa-gear text-xl"></i>
-              </div>
-              <span class="text-sm text-slate-400 font-medium">Reactive Setpoint</span>
-            </div>
-            <div class="flex items-end justify-between px-1 mt-4">
-              <div class="flex items-baseline gap-1">
-                <span class="text-3xl font-bold text-white">8</span>
-                <span class="text-sm text-slate-500 font-medium ml-1">kVAr</span>
-              </div>
-              <div class="text-lg font-semibold text-slate-300">0.2%</div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Column 3 & 4: Operator Panel overlay -->
-        <div class="lg:col-span-2 h-full">
-          
-          <div class="operator-panel">
-            <div class="panel-header">
-              <div>Genset Local Operator Panel</div>
-              <div class="px-2 py-0.5 bg-[#0f172a] text-emerald-400 text-xs font-bold rounded-full border border-slate-600 flex items-center gap-1.5 shadow-sm"><div class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse drop-shadow-[0_0_2px_rgba(16,185,129,0.8)]"></div>G5</div>
-            </div>
-            
-            <div class="panel-content">
-              <!-- Operation Column -->
-              <div class="control-column">
-                <div class="column-header text-gray-500">Operation</div>
-                <div class="flex flex-col border-t border-gray-400 flex-grow">
-                  <button class="btn-v3 active-blue">Off</button>
-                  <button class="btn-v3">Man</button>
-                  <button class="btn-v3">Aut</button>
-                </div>
-                <div class="lock-icon-container relative">
-                  <div class="relative">
-                    <i class="fa-solid fa-wifi radio-wave"></i>
-                    <i class="fa-solid fa-lock lock-icon"></i>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Middle Start/Stop Controls -->
-              <div class="middle-controls" style="margin-left: 16px; margin-top: -24px;">
-                <div class="connector connector-left"></div>
-                <button class="btn-action">Start</button>
-                <button class="btn-action">Stop</button>
-              </div>
-
-              <!-- Request Column -->
-              <div class="control-column">
-                <div class="column-header text-gray-500">Request</div>
-                <div class="flex flex-col border-t border-gray-400 flex-grow">
-                  <button class="btn-v3 active-blue">Off</button>
-                  <button class="btn-v3">On</button>
-                  <button class="btn-v3">Remote</button>
-                </div>
-                <div class="lock-icon-container relative">
-                  <div class="relative">
-                    <i class="fa-solid fa-wifi radio-wave"></i>
-                    <i class="fa-solid fa-lock lock-icon"></i>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Synch Column -->
-              <div class="control-column">
-                <div class="column-header text-gray-500">Synch</div>
-                <div class="flex flex-col border-t border-gray-400 flex-grow">
-                  <button class="btn-v3 active-blue">Off</button>
-                  <button class="btn-v3">Man</button>
-                  <button class="btn-v3">Aut</button>
-                </div>
-                <div class="lock-icon-container relative">
-                  <div class="relative">
-                    <i class="fa-solid fa-wifi radio-wave"></i>
-                    <i class="fa-solid fa-lock lock-icon"></i>
-                  </div>
-                </div>
-              </div>
-
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-
     </div>
   </div>
+
+  <!-- Tab Bar -->
+  <div class="tab-bar">
+    <button class="tab-btn active" onclick="switchTab('overview')">Overview</button>
+    <button class="tab-btn" onclick="switchTab('engine')">Engine Diagnostics</button>
+    <button class="tab-btn" onclick="switchTab('control')">Control / Modes</button>
+    <button class="tab-btn" onclick="switchTab('alarms')">Alarms / Alerts</button>
+    <button class="tab-btn" onclick="switchTab('tagdata')">Tag Data</button>
+  </div>
+
+  <!-- Tab Content Area -->
+  <div class="tab-content-area">
+
+    <!-- ==================== TAB 1: OVERVIEW ==================== -->
+    <div id="tab-overview" class="tab-panel active">
+      <div class="overview-layout">
+
+        <!-- Main Content -->
+        <div class="overview-main">
+
+          <!-- Command Bar -->
+          <div class="section-title">Commands</div>
+          <div class="command-bar" style="margin-bottom: 0.25rem;">
+            <button class="btn-control btn-primary" style="padding: 0.5rem 1.25rem;">
+              <i class="fa-solid fa-play" style="margin-right: 0.375rem;"></i> Start
+            </button>
+            <button class="btn-control" style="padding: 0.5rem 1.25rem;">
+              <i class="fa-solid fa-stop" style="margin-right: 0.375rem;"></i> Stop
+            </button>
+            <button class="btn-control" style="padding: 0.5rem 1.25rem;">
+              <i class="fa-solid fa-bell" style="margin-right: 0.375rem;"></i> Alarm Ack
+            </button>
+            <div style="width: 1px; height: 1.75rem; background-color: #334155; margin: 0 0.25rem;"></div>
+            <button class="btn-control" style="padding: 0.5rem 1.25rem;">Block</button>
+            <button class="btn-control btn-primary" style="padding: 0.5rem 1.25rem;">Auto</button>
+            <button class="btn-control" style="padding: 0.5rem 1.25rem;">Manual</button>
+            <div style="width: 1px; height: 1.75rem; background-color: #334155; margin: 0 0.25rem;"></div>
+            <div class="priority-selector">
+              <span>Priority</span>
+              <select>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option selected="">4</option>
+                <option>5</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Electrical Metrics -->
+          <div class="section-title">Electrical</div>
+          <div class="grid-4">
+            <!-- Real Power -->
+            <div class="metric-card">
+              <div class="icon-box" style="background-color: rgba(16,185,129,0.1); color: #34d399;">
+                <i class="fa-solid fa-bolt text-xl"></i>
+              </div>
+              <div class="metric-content">
+                <div class="metric-label">Real Power</div>
+                <div class="metric-value">1,624 <span class="metric-unit">kW</span></div>
+              </div>
+            </div>
+            <!-- Reactive Power -->
+            <div class="metric-card">
+              <div class="icon-box" style="background-color: rgba(96,165,250,0.1); color: #60a5fa;">
+                <i class="fa-solid fa-bolt text-xl"></i>
+              </div>
+              <div class="metric-content">
+                <div class="metric-label">Reactive Power</div>
+                <div class="metric-value">40 <span class="metric-unit">kVAr</span></div>
+              </div>
+            </div>
+            <!-- Apparent Power -->
+            <div class="metric-card">
+              <div class="icon-box" style="background-color: rgba(168,85,247,0.1); color: #a855f7;">
+                <i class="fa-solid fa-bolt text-xl"></i>
+              </div>
+              <div class="metric-content">
+                <div class="metric-label">Apparent Power</div>
+                <div class="metric-value">1,625 <span class="metric-unit">kVA</span></div>
+              </div>
+            </div>
+            <!-- Power Factor -->
+            <div class="metric-card">
+              <div class="icon-box" style="background-color: rgba(16,185,129,0.1); color: #34d399;">
+                <i class="fa-solid fa-wave-square text-xl"></i>
+              </div>
+              <div class="metric-content">
+                <div class="metric-label">Power Factor</div>
+                <div class="metric-value">0.999</div>
+              </div>
+            </div>
+            <!-- Frequency -->
+            <div class="metric-card">
+              <div class="icon-box" style="background-color: rgba(96,165,250,0.1); color: #60a5fa;">
+                <i class="fa-solid fa-wave-square text-xl"></i>
+              </div>
+              <div class="metric-content">
+                <div class="metric-label">Frequency</div>
+                <div class="metric-value">50.01 <span class="metric-unit">Hz</span></div>
+              </div>
+            </div>
+            <!-- GCB Status -->
+            <div class="metric-card">
+              <div class="icon-box" style="background-color: rgba(16,185,129,0.1); color: #34d399;">
+                <i class="fa-solid fa-toggle-on text-xl"></i>
+              </div>
+              <div class="metric-content">
+                <div class="metric-label">GCB Status</div>
+                <div class="metric-value" style="color: #34d399;">Closed</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Phase Voltages -->
+          <div class="section-title">Phase Voltages</div>
+          <div class="grid-3">
+            <div class="metric-card">
+              <div class="icon-box" style="background-color: rgba(251,191,36,0.1); color: #fbbf24;">
+                <span style="font-weight:700; font-size:0.875rem;">L1</span>
+              </div>
+              <div class="metric-content">
+                <div class="metric-label">Voltage L1-N</div>
+                <div class="metric-value">6,351 <span class="metric-unit">V</span></div>
+              </div>
+            </div>
+            <div class="metric-card">
+              <div class="icon-box" style="background-color: rgba(251,191,36,0.1); color: #fbbf24;">
+                <span style="font-weight:700; font-size:0.875rem;">L2</span>
+              </div>
+              <div class="metric-content">
+                <div class="metric-label">Voltage L2-N</div>
+                <div class="metric-value">6,348 <span class="metric-unit">V</span></div>
+              </div>
+            </div>
+            <div class="metric-card">
+              <div class="icon-box" style="background-color: rgba(251,191,36,0.1); color: #fbbf24;">
+                <span style="font-weight:700; font-size:0.875rem;">L3</span>
+              </div>
+              <div class="metric-content">
+                <div class="metric-label">Voltage L3-N</div>
+                <div class="metric-value">6,355 <span class="metric-unit">V</span></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Phase Currents -->
+          <div class="section-title">Phase Currents</div>
+          <div class="grid-3">
+            <div class="metric-card">
+              <div class="icon-box" style="background-color: rgba(251,146,60,0.1); color: #fb923c;">
+                <span style="font-weight:700; font-size:0.875rem;">L1</span>
+              </div>
+              <div class="metric-content">
+                <div class="metric-label">Current L1</div>
+                <div class="metric-value">85.2 <span class="metric-unit">A</span></div>
+              </div>
+            </div>
+            <div class="metric-card">
+              <div class="icon-box" style="background-color: rgba(251,146,60,0.1); color: #fb923c;">
+                <span style="font-weight:700; font-size:0.875rem;">L2</span>
+              </div>
+              <div class="metric-content">
+                <div class="metric-label">Current L2</div>
+                <div class="metric-value">85.0 <span class="metric-unit">A</span></div>
+              </div>
+            </div>
+            <div class="metric-card">
+              <div class="icon-box" style="background-color: rgba(251,146,60,0.1); color: #fb923c;">
+                <span style="font-weight:700; font-size:0.875rem;">L3</span>
+              </div>
+              <div class="metric-content">
+                <div class="metric-label">Current L3</div>
+                <div class="metric-value">85.4 <span class="metric-unit">A</span></div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Sidebar: Run State + Mode + Operator Panel State -->
+        <div class="overview-sidebar">
+
+          <!-- Run State -->
+          <div class="setpoint-card">
+            <div class="flex" style="display:flex; align-items:center; gap:0.75rem;">
+              <div class="icon-box" style="background-color: rgba(16,185,129,0.1); color: #34d399; width:2.25rem; height:2.25rem;">
+                <i class="fa-solid fa-circle-play"></i>
+              </div>
+              <span style="font-size:0.8rem; color:#94a3b8; font-weight:500;">Run State</span>
+            </div>
+            <div style="font-size:1.5rem; font-weight:700; color:#34d399; margin-top:0.25rem;">Running</div>
+            <div style="font-size:0.75rem; color:#64748b;">1,110 operating hours</div>
+          </div>
+
+          <!-- Operating Mode -->
+          <div class="setpoint-card">
+            <div style="display:flex; align-items:center; gap:0.75rem;">
+              <div class="icon-box" style="background-color: rgba(96,165,250,0.1); color: #60a5fa; width:2.25rem; height:2.25rem;">
+                <i class="fa-solid fa-sliders"></i>
+              </div>
+              <span style="font-size:0.8rem; color:#94a3b8; font-weight:500;">Operating Mode</span>
+            </div>
+            <div style="font-size:1.5rem; font-weight:700; color:#60a5fa; margin-top:0.25rem;">Automatic</div>
+            <div style="font-size:0.75rem; color:#64748b;">Priority 4 of 5</div>
+          </div>
+
+          <!-- Operator Panel State -->
+          <div class="setpoint-card">
+            <div style="display:flex; align-items:center; gap:0.75rem;">
+              <div class="icon-box" style="background-color: rgba(100,116,139,0.1); color: #94a3b8; width:2.25rem; height:2.25rem;">
+                <i class="fa-solid fa-gamepad"></i>
+              </div>
+              <span style="font-size:0.8rem; color:#94a3b8; font-weight:500;">Local Operator Panel</span>
+            </div>
+            <div style="display:flex; gap:0.5rem; margin-top:0.375rem; flex-wrap:wrap;">
+              <span style="font-size:0.75rem; padding:0.2rem 0.5rem; background-color:rgba(96,165,250,0.15); color:#60a5fa; border-radius:0.25rem; font-weight:600;">Op: Off</span>
+              <span style="font-size:0.75rem; padding:0.2rem 0.5rem; background-color:rgba(96,165,250,0.15); color:#60a5fa; border-radius:0.25rem; font-weight:600;">Req: Off</span>
+              <span style="font-size:0.75rem; padding:0.2rem 0.5rem; background-color:rgba(96,165,250,0.15); color:#60a5fa; border-radius:0.25rem; font-weight:600;">Synch: Off</span>
+            </div>
+          </div>
+
+          <!-- Power Summary -->
+          <div class="setpoint-card">
+            <div style="display:flex; align-items:center; gap:0.75rem;">
+              <div class="icon-box" style="background-color: rgba(16,185,129,0.1); color: #34d399; width:2.25rem; height:2.25rem;">
+                <i class="fa-solid fa-gauge-high"></i>
+              </div>
+              <span style="font-size:0.8rem; color:#94a3b8; font-weight:500;">Load</span>
+            </div>
+            <div style="display:flex; justify-content:space-between; align-items:baseline; margin-top:0.25rem;">
+              <span style="font-size:1.5rem; font-weight:700; color:#f8fafc;">1,624 <span style="font-size:0.75rem; color:#64748b; font-weight:400;">kW</span></span>
+              <span style="font-size:1.125rem; font-weight:600; color:#34d399;">49.1%</span>
+            </div>
+            <!-- Simple bar -->
+            <div style="height:0.375rem; background-color:#1e293b; border-radius:9999px; overflow:hidden; margin-top:0.25rem;">
+              <div style="width:49.1%; height:100%; background-color:#10b981; border-radius:9999px;"></div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- ==================== TAB 2: ENGINE DIAGNOSTICS (placeholder) ==================== -->
+    <div id="tab-engine" class="tab-panel">
+      <div class="placeholder-msg">Engine Diagnostics — coming next</div>
+    </div>
+
+    <!-- ==================== TAB 3: CONTROL / MODES (placeholder) ==================== -->
+    <div id="tab-control" class="tab-panel">
+      <div class="placeholder-msg">Control / Modes — coming next</div>
+    </div>
+
+    <!-- ==================== TAB 4: ALARMS / ALERTS (placeholder) ==================== -->
+    <div id="tab-alarms" class="tab-panel">
+      <div class="placeholder-msg">Alarms / Alerts — coming next</div>
+    </div>
+
+    <!-- ==================== TAB 5: TAG DATA (placeholder) ==================== -->
+    <div id="tab-tagdata" class="tab-panel">
+      <div class="placeholder-msg">Tag Data — coming next</div>
+    </div>
+
+  </div>
+
+  <script>
+    function switchTab(name) {
+      // Hide all panels
+      var panels = document.querySelectorAll('.tab-panel');
+      for (var i = 0; i &lt; panels.length; i++) {
+        panels[i].classList.remove('active');
+      }
+      // Deactivate all buttons
+      var btns = document.querySelectorAll('.tab-btn');
+      for (var i = 0; i &lt; btns.length; i++) {
+        btns[i].classList.remove('active');
+      }
+      // Activate selected
+      document.getElementById('tab-' + name).classList.add('active');
+      // Find matching button
+      var labels = {overview:'Overview', engine:'Engine Diagnostics', control:'Control / Modes', alarms:'Alarms / Alerts', tagdata:'Tag Data'};
+      for (var i = 0; i &lt; btns.length; i++) {
+        if (btns[i].textContent === labels[name]) {
+          btns[i].classList.add('active');
+        }
+      }
+    }
+  </script>
 
       </body>
     </html>
