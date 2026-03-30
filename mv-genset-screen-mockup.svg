@@ -761,9 +761,132 @@ body {
       </div>
     </div>
 
-    <!-- ==================== TAB 2: ENGINE DIAGNOSTICS (placeholder) ==================== -->
+    <!-- ==================== TAB 2: ENGINE DIAGNOSTICS ==================== -->
     <div id="tab-engine" class="tab-panel">
-      <div class="placeholder-msg">Engine Diagnostics — coming next</div>
+
+      <!-- Engine Speed -->
+      <div class="section-title">Engine</div>
+      <div class="grid-4">
+        <div class="metric-card">
+          <div class="icon-box" style="background-color: rgba(96,165,250,0.1); color: #60a5fa;">
+            <i class="fa-solid fa-gauge-high text-xl"></i>
+          </div>
+          <div class="metric-content">
+            <div class="metric-label">Engine Speed</div>
+            <div class="metric-value">1,505 <span class="metric-unit">rpm</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pressures -->
+      <div class="section-title">Pressures</div>
+      <div class="grid-4">
+        <div class="metric-card">
+          <div class="icon-box" style="background-color: rgba(96,165,250,0.1); color: #60a5fa;">
+            <i class="fa-solid fa-gauge text-xl"></i>
+          </div>
+          <div class="metric-content">
+            <div class="metric-label">Fuel Gas Pressure</div>
+            <div class="metric-value">107.46 <span class="metric-unit">psi</span></div>
+          </div>
+        </div>
+        <div class="metric-card">
+          <div class="icon-box" style="background-color: rgba(251,191,36,0.1); color: #fbbf24;">
+            <i class="fa-solid fa-oil-can text-xl"></i>
+          </div>
+          <div class="metric-content">
+            <div class="metric-label">Engine Oil Pressure</div>
+            <div class="metric-value">59.25 <span class="metric-unit">psi</span></div>
+          </div>
+        </div>
+        <div class="metric-card">
+          <div class="icon-box" style="background-color: rgba(148,163,184,0.1); color: #94a3b8;">
+            <i class="fa-solid fa-wind text-xl"></i>
+          </div>
+          <div class="metric-content">
+            <div class="metric-label">Exhaust Pressure</div>
+            <div class="metric-value">2.14 <span class="metric-unit">psi</span></div>
+          </div>
+        </div>
+        <div class="metric-card">
+          <div class="icon-box" style="background-color: rgba(96,165,250,0.1); color: #60a5fa;">
+            <i class="fa-solid fa-droplet text-xl"></i>
+          </div>
+          <div class="metric-content">
+            <div class="metric-label">Cooling Water Pressure</div>
+            <div class="metric-value">37.43 <span class="metric-unit">psi</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Temperatures -->
+      <div class="section-title">Temperatures</div>
+      <div class="grid-4">
+        <div class="metric-card">
+          <div class="icon-box" style="background-color: rgba(96,165,250,0.1); color: #60a5fa;">
+            <i class="fa-solid fa-temperature-half text-xl"></i>
+          </div>
+          <div class="metric-content">
+            <div class="metric-label">Fuel Gas Temperature</div>
+            <div class="metric-value">38.2 <span class="metric-unit">°C</span></div>
+          </div>
+        </div>
+        <div class="metric-card">
+          <div class="icon-box" style="background-color: rgba(251,146,60,0.1); color: #fb923c;">
+            <i class="fa-solid fa-temperature-half text-xl"></i>
+          </div>
+          <div class="metric-content">
+            <div class="metric-label">Engine Oil Temperature</div>
+            <div class="metric-value">66.7 <span class="metric-unit">°C</span></div>
+          </div>
+        </div>
+        <div class="metric-card">
+          <div class="icon-box" style="background-color: rgba(239,68,68,0.1); color: #f87171;">
+            <i class="fa-solid fa-temperature-half text-xl"></i>
+          </div>
+          <div class="metric-content">
+            <div class="metric-label">Exhaust Temperature</div>
+            <div class="metric-value">472 <span class="metric-unit">°C</span></div>
+          </div>
+        </div>
+        <div class="metric-card">
+          <div class="icon-box" style="background-color: rgba(239,68,68,0.1); color: #f87171;">
+            <i class="fa-solid fa-temperature-half text-xl"></i>
+          </div>
+          <div class="metric-content">
+            <div class="metric-label">Turbo Temperature</div>
+            <div class="metric-value">498 <span class="metric-unit">°C</span></div>
+          </div>
+        </div>
+        <div class="metric-card">
+          <div class="icon-box" style="background-color: rgba(239,68,68,0.1); color: #f87171;">
+            <i class="fa-solid fa-temperature-half text-xl"></i>
+          </div>
+          <div class="metric-content">
+            <div class="metric-label">SCR Inlet Temperature</div>
+            <div class="metric-value">436 <span class="metric-unit">°C</span></div>
+          </div>
+        </div>
+        <div class="metric-card">
+          <div class="icon-box" style="background-color: rgba(251,146,60,0.1); color: #fb923c;">
+            <i class="fa-solid fa-temperature-half text-xl"></i>
+          </div>
+          <div class="metric-content">
+            <div class="metric-label">Cooling Water Temp</div>
+            <div class="metric-value">74.0 <span class="metric-unit">°C</span></div>
+          </div>
+        </div>
+        <div class="metric-card">
+          <div class="icon-box" style="background-color: rgba(251,146,60,0.1); color: #fb923c;">
+            <i class="fa-solid fa-temperature-half text-xl"></i>
+          </div>
+          <div class="metric-content">
+            <div class="metric-label">Return Water Temp</div>
+            <div class="metric-value">64.9 <span class="metric-unit">°C</span></div>
+          </div>
+        </div>
+      </div>
+
     </div>
 
     <!-- ==================== TAB 3: CONTROL / MODES (placeholder) ==================== -->
