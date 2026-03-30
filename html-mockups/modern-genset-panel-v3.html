@@ -378,11 +378,57 @@
       left: -8px;
       transform: rotate(-45deg);
     }
+
+    /* Tab Bar */
+    .tab-bar {
+      display: flex;
+      gap: 0;
+      background-color: #0f172a;
+      border-bottom: 1px solid #1e293b;
+      padding: 0 0.25rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .tab-btn {
+      padding: 0.75rem 1.25rem;
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: #94a3b8;
+      background: transparent;
+      border: none;
+      border-bottom: 2px solid transparent;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: all 0.2s;
+      font-family: inherit;
+      margin-bottom: -1px;
+    }
+
+    .tab-btn:hover {
+      color: #cbd5e1;
+    }
+
+    .tab-btn.active {
+      color: #34d399;
+      border-bottom-color: #34d399;
+    }
   </style>
 </head>
 <body class="min-h-screen p-4 md:p-6 lg:p-8 flex justify-center items-center w-full">
-  <div class="max-w-[90rem] w-full flex flex-col lg:flex-row gap-6 justify-center">
-    
+  <div class="max-w-[90rem] w-full flex flex-col gap-0 justify-center">
+
+    <!-- Tab Bar -->
+    <div class="tab-bar">
+      <button class="tab-btn active" onclick="switchTab('overview', this)">Overview</button>
+      <button class="tab-btn" onclick="switchTab('engine', this)">Engine Diagnostics</button>
+      <button class="tab-btn" onclick="switchTab('control', this)">Control / Modes</button>
+      <button class="tab-btn" onclick="switchTab('alarms', this)">Alarms / Alerts</button>
+      <button class="tab-btn" onclick="switchTab('tagdata', this)">Tag Data</button>
+    </div>
+
+    <!-- Tab: Overview (existing panel content) -->
+    <div id="tab-overview" class="tab-panel flex flex-col lg:flex-row gap-6 justify-center">
+
     <!-- Left Column: Generator Visual (Compact Sidebar) -->
     <div class="lg:w-72 flex-shrink-0 flex flex-col gap-6">
       
@@ -716,6 +762,50 @@
       </div>
 
     </div>
+    </div><!-- end tab-overview -->
+
+    <!-- Tab: Engine Diagnostics (placeholder) -->
+    <div id="tab-engine" class="tab-panel" style="display:none;">
+      <div class="text-slate-500 text-sm p-8 text-center">Engine Diagnostics — content coming soon</div>
+    </div>
+
+    <!-- Tab: Control / Modes (placeholder) -->
+    <div id="tab-control" class="tab-panel" style="display:none;">
+      <div class="text-slate-500 text-sm p-8 text-center">Control / Modes — content coming soon</div>
+    </div>
+
+    <!-- Tab: Alarms / Alerts (placeholder) -->
+    <div id="tab-alarms" class="tab-panel" style="display:none;">
+      <div class="text-slate-500 text-sm p-8 text-center">Alarms / Alerts — content coming soon</div>
+    </div>
+
+    <!-- Tab: Tag Data (placeholder) -->
+    <div id="tab-tagdata" class="tab-panel" style="display:none;">
+      <div class="text-slate-500 text-sm p-8 text-center">Tag Data — content coming soon</div>
+    </div>
+
   </div>
+
+  <script>
+    function switchTab(name, btn) {
+      // Hide all panels
+      document.querySelectorAll('.tab-panel').forEach(function(p) {
+        p.style.display = 'none';
+      });
+      // Deactivate all buttons
+      document.querySelectorAll('.tab-btn').forEach(function(b) {
+        b.classList.remove('active');
+      });
+      // Show selected panel
+      var panel = document.getElementById('tab-' + name);
+      if (name === 'overview') {
+        panel.style.display = 'flex';
+      } else {
+        panel.style.display = 'block';
+      }
+      // Activate button
+      btn.classList.add('active');
+    }
+  </script>
 </body>
 </html>
